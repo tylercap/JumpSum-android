@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Jump Sum</string>
+    <string name="facebook_app_id">506870486121740</string>
+    <string name="games_app_id">320198239668</string>
+    <string name="leaderboard_id">CgkItMu16qgJEAIQAQ</string>
+    <string name="achievement_60plus_id">CgkItMu16qgJEAIQBA </string>
+    <string name="achievement_80plus_id">CgkItMu16qgJEAIQAw</string>
+    <string name="achievement_90plus_id">CgkItMu16qgJEAIQAg</string>
+    <string name="achievement_90plus5_id">CgkItMu16qgJEAIQCQ</string>
+    <string name="achievement_90plus20_id">CgkItMu16qgJEAIQBQ</string>
+    <string name="achievement_perfect_id">CgkItMu16qgJEAIQBg</string>
+    <string name="achievement_perfect5_id">CgkItMu16qgJEAIQBw</string>
+    <string name="achievement_95plus100_id">CgkItMu16qgJEAIQCA</string>
+    <string name="achievement_perfect20_id">CgkItMu16qgJEAIQCw</string>
+    <string name="achievement_10000g_id">CgkItMu16qgJEAIQCg</string>
+    <string name="achievement_10000p_id">CgkItMu16qgJEAIQDQ</string>
+    
+    <string name="sign_in_failed">Failed to sign in. Please check your network connection and try again.</string>
+    <string name="app_misconfigured">The application is incorrectly configured. Check that the package name and signing certificate match the client ID created in Developer Console. Also, if the application is not yet published, check that the account you are trying to sign in with is listed as a tester account. See logs for more information.</string>
+    <string name="license_failed">License check failed.</string>
+    <string name="unknown_error">Unknown error.</string>
+    
+    <string name="sign_in">Sign In</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="how_to_page">How To</string>
+    <string name="current_score">Current Score: </string>
+    <string name="high_score">High Score:\n</string>
+    <string name="how_to">How\nTo</string>
+    <string name="new_game">New\nGame</string>
+    <string name="post_score">Post Score\nTo Facebook</string>
+    <string name="objective_title">Objective:</string>
+    <string name="game_play_title">Game Play:</string>
+    <string name="scoring_title">Scoring:</string>
+    <string name="example_title">Example:</string>
+    
+    <string name="objective_value">The objective of the game is to jump the tiles over one another to achieve the highest total on a single tile.  The maximum score achievable is 100.\n</string>
+    <string name="game_play_value">Tiles can be moved by dragging and dropping them.  A numbered tile can only be moved under the following circumstances.  The tile must be two spaces away from an open space, and there must be another numbered tile in between the first numbered tile and the open space.  When one numbered tile jumps over another, the numbers on the tiles are added together, and the result is placed in the space that was originally open.  Let\'s say tiles A, B, and C are laid out in a row.  If tile A is currently 7, tile B is currently 4, and tile C is currently open, tile A could be moved over tile B.  Afterwards, tile C would become 11, and tiles A and B would both be open.  The game is over once there are no valid moves remaining.  An example of the gameplay is demonstrated below.\n</string>
+    <string name="scoring_value">The score is equal to the highest value on any of the tiles.\n</string>
+    
+    <string name="example1_desc">The gameboard seen here will be used as an example.</string>
+    <string name="example2_desc">The 3 in the first row can be moved over the 2.</string>
+    <string name="example3_desc">Then the 20 can be moved over the 5 in the first row as well.</string>
+    <string name="example4_desc">Then the 25 can be moved over the 4 in the second column.</string>
+    <string name="example_finished_desc">There are still remaining moves that can be made, but the current score for this example would be 29.\n</string>
+
+</resources>

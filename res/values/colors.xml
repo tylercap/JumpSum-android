@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="button_back">#FFA000</color>
+    <color name="button_border">#000070</color>
+    <color name="back_color">#B0C0FF</color>
+    <color name="how_to_back">#7711AA</color>
+    <color name="how_to_border">#55DD40</color>
+    <color name="new_game_back">#55DD40</color>
+    <color name="new_game_border">#7711AA</color>
+    <color name="how_to_text">#500977</color>
+    <color name="sign_out_back">#DD4B39</color>
+    <color name="sign_out_border">#FFFFFF</color>
+    
+</resources>
