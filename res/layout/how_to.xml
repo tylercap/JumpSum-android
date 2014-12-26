@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back_color" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="bold"
+            android:text="@string/objective_title"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/how_to_text" />
+        
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="bold"
+            android:text="@string/objective_value"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/how_to_text" />
+        
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="bold"
+        	android:textColor="@color/how_to_text"
+            android:text="@string/game_play_title"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="bold"
+            android:text="@string/game_play_value"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/how_to_text" />
+        
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="bold"
+        	android:textColor="@color/how_to_text"
+            android:text="@string/scoring_title"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="bold"
+            android:text="@string/scoring_value"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/how_to_text" />
+        
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="bold"
+        	android:textColor="@color/how_to_text"
+            android:text="@string/example_title"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="bold"
+            android:text="@string/example1_desc"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/how_to_text" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:contentDescription="@string/example1_desc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+        	android:adjustViewBounds="true"
+            android:src="@drawable/example1" />
+        
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="bold"
+            android:text="@string/example2_desc"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/how_to_text" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:contentDescription="@string/example2_desc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+        	android:adjustViewBounds="true"
+            android:src="@drawable/example2" />
+        
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="bold"
+            android:text="@string/example3_desc"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/how_to_text" />
+        
+        <ImageView
+            android:id="@+id/imageView3"
+            android:contentDescription="@string/example3_desc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+        	android:adjustViewBounds="true"
+            android:src="@drawable/example3" />
+        
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="bold"
+            android:text="@string/example4_desc"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/how_to_text" />
+        
+        <ImageView
+            android:id="@+id/imageView4"
+            android:contentDescription="@string/example4_desc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+        	android:adjustViewBounds="true"
+            android:src="@drawable/example4" />
+        
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="bold"
+            android:text="@string/example_finished_desc"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/how_to_text" />
+
+    </LinearLayout>
+    
+
+</ScrollView>
