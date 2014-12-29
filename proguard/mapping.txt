@@ -8568,47 +8568,50 @@ com.gmail.tylercap4.jumpsum.IndexedButton -> com.gmail.tylercap4.jumpsum.a:
     int getColumn() -> getColumn
     boolean performClick() -> performClick
 com.gmail.tylercap4.jumpsum.JumpSum -> com.gmail.tylercap4.jumpsum.b:
-    int RC_SIGN_IN -> d
-    int REQUEST_LEADERBOARD -> e
-    com.google.android.gms.common.api.GoogleApiClient mGoogleApiClient -> f
+    int RC_SIGN_IN -> f
+    int REQUEST_LEADERBOARD -> a
+    com.google.android.gms.common.api.GoogleApiClient mGoogleApiClient -> b
     boolean mResolvingConnectionFailure -> g
     boolean mSignInClicked -> h
     int text_color -> i
     int high_score -> j
-    int[][] widget_ids -> a
-    int[][] gameboard -> b
-    com.gmail.tylercap4.jumpsum.IndexedButton[][] widgets -> c
+    int[][] widget_ids -> c
+    int[][] gameboard -> d
+    com.gmail.tylercap4.jumpsum.IndexedButton[][] widgets -> e
     boolean game_over -> k
     boolean current_drag -> l
     com.facebook.UiLifecycleHelper uiHelper -> m
     void setCorrectContentView() -> a
     void initBoardAndWidgets() -> b
     void doNewGame() -> c
-    java.lang.String getGameAsString() -> d
-    int getScore() -> e
-    boolean checkGameOver() -> f
+    java.lang.String getGameValsKey() -> d
+    java.lang.String getHighScoreKey() -> e
+    java.lang.String getGameAsString() -> f
+    int getScore() -> g
+    boolean checkGameOver() -> h
     java.util.LinkedList getEligibleDropTargets(int,int) -> a
+    void updateAdditionalAchievements(int) -> a
+    void showLeaderboard() -> i
     void onCreate(android.os.Bundle) -> onCreate
     void onStart() -> onStart
-    void onStop() -> onStop
+    void reloadSignIn() -> j
     void onConnected(android.os.Bundle) -> a
-    void onConnectionSuspended(int) -> a
+    void onConnectionSuspended(int) -> b
     void onConnectionFailed(com.google.android.gms.common.ConnectionResult) -> a
     void onActivityResult(int,int,android.content.Intent) -> onActivityResult
     void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
     void onDestroy() -> onDestroy
     void onPause() -> onPause
     void onResume() -> onResume
-    void showLeaderboard() -> g
-    void showHowTo() -> h
+    void showHowTo() -> k
     void loadGame(java.lang.String) -> a
-    void newGame() -> i
+    void newGame() -> l
     void gameOver(boolean,int) -> a
-    void updateAchievements(int) -> b
+    void updateAchievements(int) -> c
     void jumpedTile(com.gmail.tylercap4.jumpsum.IndexedButton,com.gmail.tylercap4.jumpsum.IndexedButton) -> a
-    int getHighScore() -> j
-    boolean updateHighScore(int) -> c
-    void updateScore(int) -> d
+    int getHighScore() -> m
+    boolean updateHighScore(int) -> d
+    void updateScore(int) -> e
     void setUpButton(com.gmail.tylercap4.jumpsum.IndexedButton,int) -> a
     boolean access$0(com.gmail.tylercap4.jumpsum.JumpSum) -> a
     void access$1(com.gmail.tylercap4.jumpsum.JumpSum,boolean) -> a
@@ -8617,10 +8620,8 @@ com.gmail.tylercap4.jumpsum.JumpSum -> com.gmail.tylercap4.jumpsum.b:
     void access$4(com.gmail.tylercap4.jumpsum.JumpSum,boolean,int) -> a
     void access$5(com.gmail.tylercap4.jumpsum.JumpSum) -> b
     com.facebook.UiLifecycleHelper access$6(com.gmail.tylercap4.jumpsum.JumpSum) -> c
-    com.google.android.gms.common.api.GoogleApiClient access$7(com.gmail.tylercap4.jumpsum.JumpSum) -> d
-    void access$8(com.gmail.tylercap4.jumpsum.JumpSum,boolean) -> b
-    void access$9(com.gmail.tylercap4.jumpsum.JumpSum) -> e
-    void access$10(com.gmail.tylercap4.jumpsum.JumpSum) -> f
+    void access$7(com.gmail.tylercap4.jumpsum.JumpSum,boolean) -> b
+    void access$8(com.gmail.tylercap4.jumpsum.JumpSum) -> d
 com.gmail.tylercap4.jumpsum.JumpSum$1 -> com.gmail.tylercap4.jumpsum.c:
     com.gmail.tylercap4.jumpsum.JumpSum this$0 -> a
     void onClick(android.view.View) -> onClick
@@ -8673,15 +8674,63 @@ com.gmail.tylercap4.jumpsum.JumpSum$ValueSortable -> com.gmail.tylercap4.jumpsum
     int compareTo(com.gmail.tylercap4.jumpsum.JumpSum$ValueSortable) -> a
     int getValue() -> a
     int compareTo(java.lang.Object) -> compareTo
-com.gmail.tylercap4.jumpsum.JumpSumEasy -> com.gmail.tylercap4.jumpsum.JumpSumEasy:
+com.gmail.tylercap4.jumpsum.JumpSumLevel1 -> com.gmail.tylercap4.jumpsum.JumpSumLevel1:
     void setCorrectContentView() -> a
+    void showLeaderboard() -> i
+    void updateAdditionalAchievements(int) -> a
+    java.lang.String getGameValsKey() -> d
+    java.lang.String getHighScoreKey() -> e
     void initBoardAndWidgets() -> b
-    java.lang.String getGameAsString() -> d
-    boolean checkGameOver() -> f
-    int getScore() -> e
+    java.lang.String getGameAsString() -> f
+    boolean checkGameOver() -> h
+    int getScore() -> g
     java.util.LinkedList getEligibleDropTargets(int,int) -> a
     void doNewGame() -> c
-    void initWidgetIds() -> g
+    void initWidgetIds() -> j
+com.gmail.tylercap4.jumpsum.JumpSumLevel2 -> com.gmail.tylercap4.jumpsum.JumpSumLevel2:
+    void setCorrectContentView() -> a
+    void initBoardAndWidgets() -> b
+    java.lang.String getGameValsKey() -> d
+    java.lang.String getHighScoreKey() -> e
+    void showLeaderboard() -> i
+    void updateAdditionalAchievements(int) -> a
+    java.lang.String getGameAsString() -> f
+    boolean checkGameOver() -> h
+    int getScore() -> g
+    java.util.LinkedList getEligibleDropTargets(int,int) -> a
+    void doNewGame() -> c
+    void initWidgetIds() -> j
+com.gmail.tylercap4.jumpsum.MainMenu -> com.gmail.tylercap4.jumpsum.MainMenu:
+    int RC_SIGN_IN -> b
+    com.google.android.gms.common.api.GoogleApiClient mGoogleApiClient -> a
+    boolean mResolvingConnectionFailure -> c
+    boolean mSignInClicked -> d
+    void onCreate(android.os.Bundle) -> onCreate
+    void showHowTo() -> a
+    void onStart() -> onStart
+    void onPause() -> onPause
+    void onConnected(android.os.Bundle) -> a
+    void onConnectionSuspended(int) -> b
+    void onConnectionFailed(com.google.android.gms.common.ConnectionResult) -> a
+    void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    void onResume() -> onResume
+    void access$0(com.gmail.tylercap4.jumpsum.MainMenu,boolean) -> a
+    void access$1(com.gmail.tylercap4.jumpsum.MainMenu) -> a
+com.gmail.tylercap4.jumpsum.MainMenu$1 -> com.gmail.tylercap4.jumpsum.p:
+    com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.gmail.tylercap4.jumpsum.MainMenu$2 -> com.gmail.tylercap4.jumpsum.q:
+    com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.gmail.tylercap4.jumpsum.MainMenu$3 -> com.gmail.tylercap4.jumpsum.r:
+    com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.gmail.tylercap4.jumpsum.MainMenu$4 -> com.gmail.tylercap4.jumpsum.s:
+    com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.gmail.tylercap4.jumpsum.MainMenu$5 -> com.gmail.tylercap4.jumpsum.t:
+    com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
+    void onClick(android.view.View) -> onClick
 com.gmail.tylercap4.jumpsum.basegameutils.BaseGameUtils -> com.gmail.tylercap4.jumpsum.a.a:
     void showAlert(android.app.Activity,java.lang.String) -> a
     boolean resolveConnectionFailure(android.app.Activity,com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.common.ConnectionResult,int,java.lang.String) -> a
@@ -9094,7 +9143,7 @@ com.google.android.gms.common.api.GoogleApiClient$Builder -> com.google.android.
     com.google.android.gms.common.api.GoogleApiClient gI() -> c
 com.google.android.gms.common.api.GoogleApiClient$ConnectionCallbacks -> com.google.android.gms.common.api.r:
     void onConnected(android.os.Bundle) -> a
-    void onConnectionSuspended(int) -> a
+    void onConnectionSuspended(int) -> b
 com.google.android.gms.common.api.GoogleApiClient$OnConnectionFailedListener -> com.google.android.gms.common.api.s:
     void onConnectionFailed(com.google.android.gms.common.ConnectionResult) -> a
 com.google.android.gms.common.api.PendingResult -> com.google.android.gms.common.api.t:
@@ -9223,7 +9272,7 @@ com.google.android.gms.common.api.c$1 -> com.google.android.gms.common.api.ab:
 com.google.android.gms.common.api.c$2 -> com.google.android.gms.common.api.ac:
     com.google.android.gms.common.api.c Kn -> a
     void onConnected(android.os.Bundle) -> a
-    void onConnectionSuspended(int) -> a
+    void onConnectionSuspended(int) -> b
 com.google.android.gms.common.api.c$3 -> com.google.android.gms.common.api.ad:
     com.google.android.gms.common.api.c Kn -> a
     boolean gN() -> l_
@@ -9238,7 +9287,7 @@ com.google.android.gms.common.api.c$5 -> com.google.android.gms.common.api.af:
     com.google.android.gms.common.api.f Kq -> b
     com.google.android.gms.common.api.c Kn -> c
     void onConnected(android.os.Bundle) -> a
-    void onConnectionSuspended(int) -> a
+    void onConnectionSuspended(int) -> b
 com.google.android.gms.common.api.c$6 -> com.google.android.gms.common.api.ag:
     com.google.android.gms.common.api.f Kq -> a
     com.google.android.gms.common.api.c Kn -> b
@@ -9314,7 +9363,7 @@ com.google.android.gms.common.api.g$a -> com.google.android.gms.common.api.ar:
     void onStopLoading() -> onStopLoading
     void onReset() -> onReset
     void onConnected(android.os.Bundle) -> a
-    void onConnectionSuspended(int) -> a
+    void onConnectionSuspended(int) -> b
     void onConnectionFailed(com.google.android.gms.common.ConnectionResult) -> a
     void a(com.google.android.gms.common.ConnectionResult) -> b
 com.google.android.gms.common.api.g$b -> com.google.android.gms.common.api.as:
@@ -12887,7 +12936,7 @@ com.google.android.gms.games.internal.GamesClientImpl -> com.google.android.gms.
     long Ys -> l
     com.google.android.gms.games.Games$GamesOptions Yt -> m
     void onConnected(android.os.Bundle) -> a
-    void onConnectionSuspended(int) -> a
+    void onConnectionSuspended(int) -> b
     void onConnectionFailed(com.google.android.gms.common.ConnectionResult) -> a
     void k(android.view.View) -> a
     void c(java.lang.String[]) -> a
@@ -15905,7 +15954,7 @@ com.google.android.gms.internal.jl -> com.google.android.gms.internal.el:
     boolean isConnected() -> c
     boolean isConnecting() -> g
     void disconnect() -> b
-    void aD(int) -> b
+    void aD(int) -> a
     android.content.Context getContext() -> h
     java.lang.String[] hv() -> i
     void N(android.os.IBinder) -> c
