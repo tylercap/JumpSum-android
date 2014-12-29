@@ -2005,8 +2005,18 @@ bolts.WebViewAppLinkResolver$3
 com.gmail.tylercap4.jumpsum.BuildConfig
 com.gmail.tylercap4.jumpsum.JumpSum:
     protected static final java.lang.String TAG
+    private static final java.lang.String SIGNED_IN_KEY
+com.gmail.tylercap4.jumpsum.JumpSumLevel1:
     private static final java.lang.String HIGH_SCORE_KEY
     private static final java.lang.String GAME_VALUES_KEY
+    private static final int rows
+    private static final int columns
+com.gmail.tylercap4.jumpsum.JumpSumLevel2:
+    private static final java.lang.String HIGH_SCORE_KEY
+    private static final java.lang.String GAME_VALUES_KEY
+    private static final int rows
+    private static final int columns
+com.gmail.tylercap4.jumpsum.MainMenu:
     private static final java.lang.String SIGNED_IN_KEY
 com.gmail.tylercap4.jumpsum.R
 com.gmail.tylercap4.jumpsum.R$anim
