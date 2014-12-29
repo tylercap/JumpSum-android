@@ -1,0 +1,79 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/back_color" >    
+	   
+    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content">        
+        
+	    <Button
+	        android:id="@+id/howToButton"
+	        android:text="@string/how_to"
+	   		style="@style/HowToButton" />
+    
+	    <FrameLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+			android:layout_gravity="right" >
+		    
+			<com.google.android.gms.common.SignInButton
+			    android:id="@+id/sign_in_button"
+			    android:layout_width="wrap_content"
+			    android:layout_height="match_parent"
+		    	android:layout_gravity="right"/>
+		    	
+		    <LinearLayout
+				android:id="@+id/sign_out_layout"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+	    		android:orientation="vertical"
+				android:visibility="gone">
+		    	
+				<TextView
+				        android:id="@+id/current_user"
+					    android:layout_width="wrap_content"
+					    android:layout_height="match_parent"
+			    		android:layout_gravity="right"
+				        android:textColor="@color/sign_out_back" />
+			    
+			    <Button
+					    android:id="@+id/sign_out_button"
+					    android:layout_width="wrap_content"
+					    android:layout_height="match_parent"
+					    android:text="@string/sign_out"
+			    		android:layout_gravity="right" 
+			    		style="@style/SignOutButton"  />
+			</LinearLayout>
+		</FrameLayout>		
+    </LinearLayout>
+
+    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical"
+	    android:gravity="center">
+	      
+	    <TextView
+	        android:id="@+id/levelChoices"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/chooseLevel"
+	        android:textColor="@color/button_border"
+	        android:layout_gravity="center"
+	        android:textAppearance="?android:attr/textAppearanceLarge"
+	    	android:layout_margin="10dp" />
+		
+	    <Button
+	        android:id="@+id/level1_button"
+	        android:text="@string/level1_button"
+	   		style="@style/CustomButton"
+	    	android:layout_margin="5dp" />
+	    <Button
+	        android:id="@+id/level2_button"
+	        android:text="@string/level2_button"
+	   		style="@style/CustomButton" 
+	    	android:layout_margin="5dp"/>
+	</LinearLayout>
+</LinearLayout>
