@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Jump Sum</string>
+    <string name="app_name">Jump Sum</string>    
+    <string name="level1">Jump Sum Level 1</string>
+    <string name="level2">Jump Sum Level 2</string>
+    
     <string name="facebook_app_id">506870486121740</string>
     <string name="games_app_id">320198239668</string>
     <string name="leaderboard_id">CgkItMu16qgJEAIQAQ</string>
-    <string name="achievement_60plus_id">CgkItMu16qgJEAIQBA </string>
+    <string name="leaderboard_hard_id">CgkItMu16qgJEAIQDg</string>
+    <string name="achievement_60plus_id">CgkItMu16qgJEAIQBA</string>
     <string name="achievement_80plus_id">CgkItMu16qgJEAIQAw</string>
     <string name="achievement_90plus_id">CgkItMu16qgJEAIQAg</string>
+    <string name="achievement_perfect_id">CgkItMu16qgJEAIQBg</string>
+    <string name="achievement_60plus_l2_id">CgkItMu16qgJEAIQDw</string>
+    <string name="achievement_80plus_l2_id">CgkItMu16qgJEAIQEA</string>
+    <string name="achievement_90plus_l2_id">CgkItMu16qgJEAIQEQ</string>
+    <string name="achievement_perfect_l2_id">CgkItMu16qgJEAIQEg</string>
     <string name="achievement_90plus5_id">CgkItMu16qgJEAIQCQ</string>
     <string name="achievement_90plus20_id">CgkItMu16qgJEAIQBQ</string>
-    <string name="achievement_perfect_id">CgkItMu16qgJEAIQBg</string>
     <string name="achievement_perfect5_id">CgkItMu16qgJEAIQBw</string>
     <string name="achievement_95plus100_id">CgkItMu16qgJEAIQCA</string>
     <string name="achievement_perfect20_id">CgkItMu16qgJEAIQCw</string>
@@ -24,6 +32,9 @@
     
     <string name="sign_in">Sign In</string>
     <string name="sign_out">Sign Out</string>
+    <string name="chooseLevel">Choose a Level:</string>
+    <string name="level1_button">Level 1</string>
+    <string name="level2_button">Level 2</string>
     <string name="leaderboard">Leaderboard</string>
     <string name="how_to_page">How To</string>
     <string name="current_score">Current Score: </string>

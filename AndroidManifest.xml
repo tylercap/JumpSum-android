@@ -18,13 +18,21 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".JumpSumEasy"
+            android:name=".MainMenu"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".JumpSumLevel1"
+            android:label="@string/level1" >
+        </activity>
+        <activity
+            android:name=".JumpSumLevel2"
+            android:label="@string/level2" >
         </activity>
         <activity
             android:name=".HowToPage"
