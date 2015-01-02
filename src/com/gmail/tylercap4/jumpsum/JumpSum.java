@@ -513,6 +513,17 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
 		    } 
         	if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
         		view.performClick();
+        		
+        		synchronized( JumpSum.this ){
+		        	view.setVisibility(View.VISIBLE);
+		        	
+		        	IndexedButton button = (IndexedButton)view;
+			        for( Button eligible:getEligibleDropTargets(button.getRow(), button.getColumn()) ){
+			        	eligible.setBackgroundResource(R.drawable.custom_button);
+			        }
+		        	JumpSum.this.current_drag = false;
+	        	}        		
+        		
         		return true;
         	}
         	else {
