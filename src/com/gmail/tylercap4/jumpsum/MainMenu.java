@@ -86,6 +86,30 @@ public class MainMenu extends Activity implements ConnectionCallbacks, OnConnect
             	Intent i = new Intent( MainMenu.this, JumpSumLevel3.class );
             	MainMenu.this.startActivity( i );
             }
+        }); 
+        
+        final View level4 = findViewById(R.id.level4_button);
+        level4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	Intent i = new Intent( MainMenu.this, JumpSumLevel4.class );
+            	MainMenu.this.startActivity( i );
+            }
+        });
+        
+        final View level5 = findViewById(R.id.level5_button);
+        level5.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	Intent i = new Intent( MainMenu.this, JumpSumLevel5.class );
+            	MainMenu.this.startActivity( i );
+            }
+        });
+        
+        final View level6 = findViewById(R.id.level6_button);
+        level6.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	Intent i = new Intent( MainMenu.this, JumpSumLevel6.class );
+            	MainMenu.this.startActivity( i );
+            }
         });
         
         final Button howTo = (Button) findViewById(R.id.howToButton);

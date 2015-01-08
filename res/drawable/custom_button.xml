@@ -5,10 +5,10 @@
         android:radius="15dp"/>
     <!-- Padding, in this case, around the button's text  -->
     <padding
-        android:left="20dp"
-        android:right="20dp"
-        android:top="10dp"
-        android:bottom="10dp"
+        android:left="8dp"
+        android:right="8dp"
+        android:top="8dp"
+        android:bottom="8dp"
         />
     <solid
         android:color="@color/button_back"/>

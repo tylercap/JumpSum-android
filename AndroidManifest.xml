@@ -39,6 +39,18 @@
             android:label="@string/level3" >
         </activity>
         <activity
+            android:name=".JumpSumLevel4"
+            android:label="@string/level4" >
+        </activity>
+        <activity
+            android:name=".JumpSumLevel5"
+            android:label="@string/level5" >
+        </activity>
+        <activity
+            android:name=".JumpSumLevel6"
+            android:label="@string/level6" >
+        </activity>
+        <activity
             android:name=".HowToPage"
             android:label="@string/how_to_page" >
         </activity>
