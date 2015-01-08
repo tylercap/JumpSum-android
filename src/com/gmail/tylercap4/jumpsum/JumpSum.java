@@ -1,6 +1,7 @@
 package com.gmail.tylercap4.jumpsum;
 
 import java.util.LinkedList;
+import java.util.Stack;
 import java.util.StringTokenizer;
 
 import com.facebook.UiLifecycleHelper;
@@ -52,6 +53,7 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
 	protected IndexedButton [][] 	widgets;
 	private   boolean				game_over;
 	private   boolean				current_drag;
+	private   Stack<String>			undo_stack;
 	
 	private UiLifecycleHelper uiHelper;
     
@@ -88,6 +90,8 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
         widgets = null;
         widget_ids = null;
         high_score = -1;
+
+    	undo_stack = new Stack<String>();
         
         final View signIn = findViewById(R.id.sign_in_button);
         signIn.setOnClickListener(new View.OnClickListener() {
@@ -122,12 +126,13 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
             }
         });
         
-        final Button howTo = (Button) findViewById(R.id.howToButton);
-        howTo.setOnClickListener(new View.OnClickListener() {
+        final Button undoButton = (Button) findViewById(R.id.undoButton);
+        undoButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                showHowTo();
+                undoMove();
             }
         });
+        disableUndo();
         
         final Button leaderboard = (Button) findViewById(R.id.leaderboard_button);
         leaderboard.setOnClickListener(new View.OnClickListener() {
@@ -338,12 +343,52 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
     	updateScore(score);
     	updateHighScore(score);
     	this.current_drag = false;
+    	
+    	if( undo_stack != null && !undo_stack.isEmpty() ){
+    		enableUndo();
+    	}
     }
-
-    private void showHowTo(){
-    	// show a new page explaining how to play the game
-    	Intent how_to = new Intent( this, HowToPage.class );
-    	startActivity( how_to );
+    
+    private void undoMove(){
+    	if( undo_stack != null && !undo_stack.isEmpty() ){
+    		String game = undo_stack.pop();
+    		loadGame(game);
+    		int score = getScore();
+        	updateScore(score);
+        	this.game_over = false;
+        	this.current_drag = false;
+    		
+    		if( undo_stack.isEmpty() ){
+    			disableUndo();
+    		}
+    	}
+    	else{
+    		disableUndo();
+    	}
+    }
+    
+    private void addToUndoStack(){
+    	String game = getGameAsString();
+    	
+    	if( undo_stack == null ){
+    		undo_stack = new Stack<String>();
+    	}
+    	
+    	undo_stack.push(game);
+    	
+    	enableUndo();
+    }
+    
+    private void disableUndo(){
+    	final Button undoButton = (Button) findViewById(R.id.undoButton);
+        undoButton.setEnabled(false);
+        undoButton.setAlpha(0.5f);
+    }
+    
+    private void enableUndo(){
+    	final Button undoButton = (Button) findViewById(R.id.undoButton);
+        undoButton.setEnabled(true);
+        undoButton.setAlpha(1.0f);
     }
     
     private void loadGame( String game_as_string ){
@@ -388,6 +433,9 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
     	
     	int score = getScore();
     	updateScore(score);
+    	
+    	undo_stack = new Stack<String>();
+    	disableUndo();
     }
     
     private void gameOver( boolean new_high, int score ){    	
@@ -400,6 +448,9 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
         if (prev != null) {
             ft.remove(prev);
         }
+
+    	undo_stack = new Stack<String>();
+    	disableUndo();
     	
     	GameOverDialog dialog = new GameOverDialog( new_high, score );
     	dialog.show(ft, "dialog");
@@ -416,6 +467,8 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
     }
     
     private void jumpedTile( IndexedButton start_tile, IndexedButton end_tile ){
+    	addToUndoStack();
+    	
     	// the end_tile must be empty tile
     	// the jumped_tile will be the tile in between the start_tile and end_tile
     	// the value at the start_tile will be added to the value at the jumped_tile and the sum will be placed in the end_tile

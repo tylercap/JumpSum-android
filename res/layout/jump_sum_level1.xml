@@ -154,9 +154,9 @@
     	android:orientation="horizontal" >
         
         <Button
-	        android:id="@+id/howToButton"
-	        android:text="@string/how_to"
-    		style="@style/HowToButton" />
+	        android:id="@+id/undoButton"
+	        android:text="@string/undo"
+    		style="@style/UndoButton" />
         
         <TextView
 	        android:id="@+id/highScoreText"

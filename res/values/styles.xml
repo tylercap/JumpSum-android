@@ -34,6 +34,15 @@
         <item name="android:textStyle">bold</item>
     </style>
     
+    <style name="UndoButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/undo_button</item>
+        <item name="android:textColor">@color/undo_border</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
     <style name="NewGameButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

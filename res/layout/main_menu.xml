@@ -69,11 +69,13 @@
 	        android:id="@+id/level1_button"
 	        android:text="@string/level1_button"
 	   		style="@style/CustomButton"
+	        android:layout_width="match_parent"
 	    	android:layout_margin="5dp" />
 	    <Button
 	        android:id="@+id/level2_button"
 	        android:text="@string/level2_button"
 	   		style="@style/CustomButton" 
+	        android:layout_width="match_parent"
 	    	android:layout_margin="5dp"/>
 	</LinearLayout>
 </LinearLayout>
