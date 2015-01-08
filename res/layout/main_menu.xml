@@ -77,5 +77,11 @@
 	   		style="@style/CustomButton" 
 	        android:layout_width="match_parent"
 	    	android:layout_margin="5dp"/>
+	    <Button
+	        android:id="@+id/level3_button"
+	        android:text="@string/level3_button"
+	   		style="@style/CustomButton" 
+	        android:layout_width="match_parent"
+	    	android:layout_margin="5dp"/>
 	</LinearLayout>
 </LinearLayout>
