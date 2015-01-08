@@ -57,15 +57,13 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
 	
 	private UiLifecycleHelper uiHelper;
     
-	protected abstract void							setCorrectContentView();
-    protected abstract void 						initBoardAndWidgets();
-    protected abstract void 						doNewGame();
+	protected abstract int							getRows();
+	protected abstract int							getColumns();
     protected abstract String 						getGameValsKey();
     protected abstract String 						getHighScoreKey();
-    protected abstract String 						getGameAsString();
-    protected abstract int 							getScore();
-    protected abstract boolean 						checkGameOver();
-    protected abstract LinkedList<IndexedButton> 	getEligibleDropTargets( int row, int column );
+	protected abstract void							setCorrectContentView();
+	protected abstract void							initWidgetIds();
+    protected abstract void 						doNewGame();
     protected abstract void							updateAdditionalAchievements( int score );
     protected abstract void							showLeaderboard();
 
@@ -347,6 +345,95 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
     	if( undo_stack != null && !undo_stack.isEmpty() ){
     		enableUndo();
     	}
+    }
+	
+    protected void initBoardAndWidgets(){
+    	int rows = getRows();
+    	int columns = getColumns();
+    	
+    	widget_ids = new int[rows][columns];
+    	initWidgetIds();
+        gameboard = new int[rows][columns];
+        widgets = new IndexedButton[rows][columns];
+    }
+    
+    protected String getGameAsString(){
+    	int rows = getRows();
+    	int columns = getColumns();
+    	
+    	// save the game currently in progress
+    	StringBuilder game_string = new StringBuilder();
+    	for(int row = 0; row < rows; row++ ){    		
+    		for( int column = 0; column < columns; column++ ){
+    			int value = gameboard[row][column];
+    			
+    			game_string.append(value);
+    			if( column < (columns - 1) ){
+    				game_string.append(',');
+    			}
+    		}
+    		if( row < (rows - 1) ){
+				game_string.append(';');
+			}
+    	}
+    	
+    	return game_string.toString();
+    }
+    
+    protected boolean checkGameOver(){    	
+    	int rows = getRows();
+    	int columns = getColumns();
+    	
+    	for(int row = 0; row < rows; row++ ){    		
+    		for( int column = 0; column < columns; column++ ){
+    			if( getEligibleDropTargets(row, column).size() > 0 ){
+    				return false;
+    			}
+    		}
+    	}
+    	
+    	return true;
+    }
+    
+    protected LinkedList<IndexedButton> getEligibleDropTargets( int row, int column ){
+    	LinkedList<IndexedButton> eligible = new LinkedList<IndexedButton>();
+    	
+    	synchronized( JumpSum.this ){
+    		if( gameboard[row][column] <= 0 ){
+	    		// can't move a blank piece
+	    		return eligible;
+	    	}
+	    	
+	    	// must check that there is a value in between the two as well
+	    	if( row + 2 < getRows() && (gameboard[row + 2][column] == -1) && (gameboard[row + 1][column] > 0) ){
+	    		eligible.add( widgets[row + 2][column] );
+	    	}
+	    	if( row - 2 >= 0 && (gameboard[row - 2][column] == -1) && (gameboard[row - 1][column] > 0) ){
+	    		eligible.add( widgets[row - 2][column] );
+	    	}
+	    	if( column + 2 < getColumns() && (gameboard[row][column + 2] == -1) && (gameboard[row][column + 1] > 0) ){
+	    		eligible.add( widgets[row][column + 2] );
+	    	}
+	    	if( column - 2 >= 0 && (gameboard[row][column - 2] == -1) && (gameboard[row][column - 1] > 0) ){
+	    		eligible.add( widgets[row][column - 2] );
+	    	}
+    	}
+    	
+    	return eligible;
+    }
+
+    protected int getScore(){
+    	int rows = getRows();
+    	int columns = getColumns();
+    	int score = 0;
+    	
+    	for(int row = 0; row < rows; row++ ){    		
+    		for( int column = 0; column < columns; column++ ){
+    			score = Math.max(gameboard[row][column], score);
+    		}
+    	}
+    	
+    	return score;
     }
     
     private void undoMove(){
