@@ -5,6 +5,10 @@
     <string name="level1">Jump Sum Level 1</string>
     <string name="level2">Jump Sum Level 2</string>
     <string name="level3">Jump Sum Level 3</string>
+    <string name="level4">Jump Sum Level 4</string>
+    <string name="level5">Jump Sum Level 5</string>
+    <string name="level6">Jump Sum Level 6</string>
+    <string name="level7">Jump Sum Level 7</string>
     
     <string name="facebook_app_id">506870486121740</string>
     <string name="games_app_id">320198239668</string>
@@ -37,6 +41,10 @@
     <string name="level1_button">Level 1</string>
     <string name="level2_button">Level 2</string>
     <string name="level3_button">Level 3</string>
+    <string name="level4_button">Level 4</string>
+    <string name="level5_button">Level 5</string>
+    <string name="level6_button">Level 6</string>
+    <string name="level7_button">Level 7</string>
     <string name="leaderboard">Leaderboard</string>
     <string name="how_to_page">How To</string>
     <string name="current_score">Current Score: </string>

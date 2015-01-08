@@ -83,5 +83,29 @@
 	   		style="@style/CustomButton" 
 	        android:layout_width="match_parent"
 	    	android:layout_margin="5dp"/>
+	    <Button
+	        android:id="@+id/level4_button"
+	        android:text="@string/level4_button"
+	   		style="@style/CustomButton" 
+	        android:layout_width="match_parent"
+	    	android:layout_margin="5dp"/>
+	    <Button
+	        android:id="@+id/level5_button"
+	        android:text="@string/level5_button"
+	   		style="@style/CustomButton" 
+	        android:layout_width="match_parent"
+	    	android:layout_margin="5dp"/>
+	    <Button
+	        android:id="@+id/level6_button"
+	        android:text="@string/level6_button"
+	   		style="@style/CustomButton" 
+	        android:layout_width="match_parent"
+	    	android:layout_margin="5dp"/>
+	    <Button
+	        android:id="@+id/level7_button"
+	        android:text="@string/level7_button"
+	   		style="@style/CustomButton" 
+	        android:layout_width="match_parent"
+	    	android:layout_margin="5dp"/>
 	</LinearLayout>
 </LinearLayout>
