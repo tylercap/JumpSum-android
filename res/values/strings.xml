@@ -14,6 +14,11 @@
     <string name="games_app_id">320198239668</string>
     <string name="leaderboard_id">CgkItMu16qgJEAIQAQ</string>
     <string name="leaderboard_l2_id">CgkItMu16qgJEAIQDg</string>
+    <string name="leaderboard_l3_id">CgkItMu16qgJEAIQFQ</string>
+    <string name="leaderboard_l4_id">CgkItMu16qgJEAIQFg</string>
+    <string name="leaderboard_l5_id">CgkItMu16qgJEAIQFw</string>
+    <string name="leaderboard_l6_id">CgkItMu16qgJEAIQGA</string>
+    <string name="leaderboard_l7_id">CgkItMu16qgJEAIQGQ</string>
     <string name="achievement_60plus_id">CgkItMu16qgJEAIQBA</string>
     <string name="achievement_80plus_id">CgkItMu16qgJEAIQAw</string>
     <string name="achievement_90plus_id">CgkItMu16qgJEAIQAg</string>

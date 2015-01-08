@@ -30,18 +30,16 @@ public class JumpSumLevel5 extends JumpSum
     
 	@Override
     protected void showLeaderboard(){
-    	// show the google play leaderboard    	
-		/*TODO:
+    	// show the google play leaderboard
     	startActivityForResult(Games.Leaderboards.getLeaderboardIntent(mGoogleApiClient,
     	        			   getString(R.string.leaderboard_l5_id)), REQUEST_LEADERBOARD);
-    	        			   */
     }
 	
 	@Override
-	protected void updateAdditionalAchievements( int score ){    	
-		/*TODO:
+	protected void updateAdditionalAchievements( int score ){
 		Games.Leaderboards.submitScore(mGoogleApiClient, getString(R.string.leaderboard_l5_id), score);		
-		
+    	
+		/*TODO:
 		if( score >= 60 ){
 			Games.Achievements.unlock(mGoogleApiClient, getString(R.string.achievement_60plus_l5_id));
 		}

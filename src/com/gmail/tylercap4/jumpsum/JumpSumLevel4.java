@@ -10,8 +10,7 @@ import android.widget.FrameLayout;
 public class JumpSumLevel4 extends JumpSum
 {    
 	private static final String HIGH_SCORE_KEY  = "HIGH_SCORE_4";
-	private static final String GAME_VALUES_KEY = "GAME_VALUES_4";
-	
+	private static final String GAME_VALUES_KEY = "GAME_VALUES_4";	
 	private static final int ROWS = 7;
 	private static final int COLUMNS = 6;
 	
@@ -32,17 +31,15 @@ public class JumpSumLevel4 extends JumpSum
 	@Override
     protected void showLeaderboard(){
     	// show the google play leaderboard
-		/*TODO:
     	startActivityForResult(Games.Leaderboards.getLeaderboardIntent(mGoogleApiClient,
     	        			   getString(R.string.leaderboard_l4_id)), REQUEST_LEADERBOARD);
-    	        			   */
     }
 
 	@Override
 	protected void updateAdditionalAchievements(int score) {
-		/*TODO:
 		Games.Leaderboards.submitScore(mGoogleApiClient, getString(R.string.leaderboard_l4_id), score);		
-		
+
+		/*TODO:
 		if( score >= 60 ){
 			Games.Achievements.unlock(mGoogleApiClient, getString(R.string.achievement_60plus_l4_id));
 		}
