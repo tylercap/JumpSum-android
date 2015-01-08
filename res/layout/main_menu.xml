@@ -3,8 +3,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/back_color" >    
-	   
+	
     <LinearLayout
+        android:orientation="horizontal"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content">        
         
@@ -49,63 +50,67 @@
 		</FrameLayout>		
     </LinearLayout>
 
-    <LinearLayout
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent"
-	    android:orientation="vertical"
-	    android:gravity="center">
-	      
-	    <TextView
-	        android:id="@+id/levelChoices"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/chooseLevel"
-	        android:textColor="@color/button_border"
-	        android:layout_gravity="center"
-	        android:textAppearance="?android:attr/textAppearanceLarge"
-	    	android:layout_margin="10dp" />
-		
-	    <Button
-	        android:id="@+id/level1_button"
-	        android:text="@string/level1_button"
-	   		style="@style/CustomButton"
-	        android:layout_width="match_parent"
-	    	android:layout_margin="5dp" />
-	    <Button
-	        android:id="@+id/level2_button"
-	        android:text="@string/level2_button"
-	   		style="@style/CustomButton" 
-	        android:layout_width="match_parent"
-	    	android:layout_margin="5dp"/>
-	    <Button
-	        android:id="@+id/level3_button"
-	        android:text="@string/level3_button"
-	   		style="@style/CustomButton" 
-	        android:layout_width="match_parent"
-	    	android:layout_margin="5dp"/>
-	    <Button
-	        android:id="@+id/level4_button"
-	        android:text="@string/level4_button"
-	   		style="@style/CustomButton" 
-	        android:layout_width="match_parent"
-	    	android:layout_margin="5dp"/>
-	    <Button
-	        android:id="@+id/level5_button"
-	        android:text="@string/level5_button"
-	   		style="@style/CustomButton" 
-	        android:layout_width="match_parent"
-	    	android:layout_margin="5dp"/>
-	    <Button
-	        android:id="@+id/level6_button"
-	        android:text="@string/level6_button"
-	   		style="@style/CustomButton" 
-	        android:layout_width="match_parent"
-	    	android:layout_margin="5dp"/>
-	    <Button
-	        android:id="@+id/level7_button"
-	        android:text="@string/level7_button"
-	   		style="@style/CustomButton" 
-	        android:layout_width="match_parent"
-	    	android:layout_margin="5dp"/>
-	</LinearLayout>
+    <ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+	    <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:gravity="center">
+		      
+		    <TextView
+		        android:id="@+id/levelChoices"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/chooseLevel"
+		        android:textColor="@color/button_border"
+		        android:layout_gravity="center"
+		        android:textAppearance="?android:attr/textAppearanceLarge"
+		    	android:layout_margin="10dp" />
+			
+		    <Button
+		        android:id="@+id/level1_button"
+		        android:text="@string/level1_button"
+		   		style="@style/CustomButton"
+		        android:layout_width="match_parent"
+		    	android:layout_margin="5dp" />
+		    <Button
+		        android:id="@+id/level2_button"
+		        android:text="@string/level2_button"
+		   		style="@style/CustomButton" 
+		        android:layout_width="match_parent"
+		    	android:layout_margin="5dp"/>
+		    <Button
+		        android:id="@+id/level3_button"
+		        android:text="@string/level3_button"
+		   		style="@style/CustomButton" 
+		        android:layout_width="match_parent"
+		    	android:layout_margin="5dp"/>
+		    <Button
+		        android:id="@+id/level4_button"
+		        android:text="@string/level4_button"
+		   		style="@style/CustomButton" 
+		        android:layout_width="match_parent"
+		    	android:layout_margin="5dp"/>
+		    <Button
+		        android:id="@+id/level5_button"
+		        android:text="@string/level5_button"
+		   		style="@style/CustomButton" 
+		        android:layout_width="match_parent"
+		    	android:layout_margin="5dp"/>
+		    <Button
+		        android:id="@+id/level6_button"
+		        android:text="@string/level6_button"
+		   		style="@style/CustomButton" 
+		        android:layout_width="match_parent"
+		    	android:layout_margin="5dp"/>
+		    <Button
+		        android:id="@+id/level7_button"
+		        android:text="@string/level7_button"
+		   		style="@style/CustomButton" 
+		        android:layout_width="match_parent"
+		    	android:layout_margin="5dp"/>
+		</LinearLayout>
+	</ScrollView>
 </LinearLayout>
