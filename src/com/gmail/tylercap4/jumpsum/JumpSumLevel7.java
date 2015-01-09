@@ -39,15 +39,14 @@ public class JumpSumLevel7 extends JumpSum
 	protected void updateAdditionalAchievements(int score) {
 		Games.Leaderboards.submitScore(mGoogleApiClient, getString(R.string.leaderboard_l7_id), score);		
 
-		/*TODO:
 		if( score >= 60 ){
-			Games.Achievements.unlock(mGoogleApiClient, getString(R.string.achievement_60plus_l4_id));
+			Games.Achievements.unlock(mGoogleApiClient, getString(R.string.achievement_60plus_l7_id));
 		}
 		if( score >= 80 ){
-			Games.Achievements.unlock(mGoogleApiClient, getString(R.string.achievement_80plus_l4_id));
+			Games.Achievements.unlock(mGoogleApiClient, getString(R.string.achievement_80plus_l7_id));
 		}
 		if( score >= 90 ){
-			Games.Achievements.unlock(mGoogleApiClient, getString(R.string.achievement_90plus_l4_id));
+			Games.Achievements.unlock(mGoogleApiClient, getString(R.string.achievement_90plus_l7_id));
 			Games.Achievements.increment(mGoogleApiClient, getString(R.string.achievement_90plus5_id), 1);
 			Games.Achievements.increment(mGoogleApiClient, getString(R.string.achievement_90plus20_id), 1);
 		}
@@ -55,11 +54,10 @@ public class JumpSumLevel7 extends JumpSum
 			Games.Achievements.increment(mGoogleApiClient, getString(R.string.achievement_95plus100_id), 1);
 		}
 		if( score == 100 ){
-			Games.Achievements.unlock(mGoogleApiClient, getString(R.string.achievement_perfect_l4_id));
+			Games.Achievements.unlock(mGoogleApiClient, getString(R.string.achievement_perfect_l7_id));
 			Games.Achievements.increment(mGoogleApiClient, getString(R.string.achievement_perfect5_id), 1);
 			Games.Achievements.increment(mGoogleApiClient, getString(R.string.achievement_perfect20_id), 1);
 		}
-		*/
 	}
 
     @Override

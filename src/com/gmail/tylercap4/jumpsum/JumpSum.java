@@ -27,6 +27,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.*;
 import android.view.View.*;
@@ -71,6 +72,7 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setCorrectContentView();
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         
         uiHelper = new UiLifecycleHelper(this, null);
         uiHelper.onCreate(savedInstanceState);
@@ -145,6 +147,17 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
     	super.onStart();
     	
     	reloadSignIn();
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        // Respond to the action bar's Up/Home button
+        case android.R.id.home:
+            NavUtils.navigateUpFromSameTask(this);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
     
     private void reloadSignIn(){

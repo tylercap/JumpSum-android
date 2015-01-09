@@ -19,14 +19,7 @@
     <string name="leaderboard_l5_id">CgkItMu16qgJEAIQFw</string>
     <string name="leaderboard_l6_id">CgkItMu16qgJEAIQGA</string>
     <string name="leaderboard_l7_id">CgkItMu16qgJEAIQGQ</string>
-    <string name="achievement_60plus_id">CgkItMu16qgJEAIQBA</string>
-    <string name="achievement_80plus_id">CgkItMu16qgJEAIQAw</string>
-    <string name="achievement_90plus_id">CgkItMu16qgJEAIQAg</string>
-    <string name="achievement_perfect_id">CgkItMu16qgJEAIQBg</string>
-    <string name="achievement_60plus_l2_id">CgkItMu16qgJEAIQDw</string>
-    <string name="achievement_80plus_l2_id">CgkItMu16qgJEAIQEA</string>
-    <string name="achievement_90plus_l2_id">CgkItMu16qgJEAIQEQ</string>
-    <string name="achievement_perfect_l2_id">CgkItMu16qgJEAIQEg</string>
+    
     <string name="achievement_90plus5_id">CgkItMu16qgJEAIQCQ</string>
     <string name="achievement_90plus20_id">CgkItMu16qgJEAIQBQ</string>
     <string name="achievement_perfect5_id">CgkItMu16qgJEAIQBw</string>
@@ -72,5 +65,39 @@
     <string name="example3_desc">Then the 20 can be moved over the 5 in the first row as well.</string>
     <string name="example4_desc">Then the 25 can be moved over the 4 in the second column.</string>
     <string name="example_finished_desc">There are still remaining moves that can be made, but the current score for this example would be 29.\n</string>
-
+    
+    <string name="achievement_60plus_id">CgkItMu16qgJEAIQBA</string>
+    <string name="achievement_80plus_id">CgkItMu16qgJEAIQAw</string>
+    <string name="achievement_90plus_id">CgkItMu16qgJEAIQAg</string>
+    <string name="achievement_perfect_id">CgkItMu16qgJEAIQBg</string>
+    
+    <string name="achievement_60plus_l2_id">CgkItMu16qgJEAIQDw</string>
+    <string name="achievement_80plus_l2_id">CgkItMu16qgJEAIQEA</string>
+    <string name="achievement_90plus_l2_id">CgkItMu16qgJEAIQEQ</string>
+    <string name="achievement_perfect_l2_id">CgkItMu16qgJEAIQEg</string>
+    
+    <string name="achievement_60plus_l3_id">CgkItMu16qgJEAIQGg</string>
+    <string name="achievement_80plus_l3_id">CgkItMu16qgJEAIQGw</string>
+    <string name="achievement_90plus_l3_id">CgkItMu16qgJEAIQHA</string>
+    <string name="achievement_perfect_l3_id">CgkItMu16qgJEAIQKQ</string>
+    
+    <string name="achievement_60plus_l4_id">CgkItMu16qgJEAIQHQ</string>
+    <string name="achievement_80plus_l4_id">CgkItMu16qgJEAIQHg</string>
+    <string name="achievement_90plus_l4_id">CgkItMu16qgJEAIQHw</string>
+    <string name="achievement_perfect_l4_id">CgkItMu16qgJEAIQKg</string>
+    
+    <string name="achievement_60plus_l5_id">CgkItMu16qgJEAIQIA</string>
+    <string name="achievement_80plus_l5_id">CgkItMu16qgJEAIQIQ</string>
+    <string name="achievement_90plus_l5_id">CgkItMu16qgJEAIQIg</string>
+    <string name="achievement_perfect_l5_id">CgkItMu16qgJEAIQKw</string>
+    
+    <string name="achievement_60plus_l6_id">CgkItMu16qgJEAIQIw</string>
+    <string name="achievement_80plus_l6_id">CgkItMu16qgJEAIQJA</string>
+    <string name="achievement_90plus_l6_id">CgkItMu16qgJEAIQJQ</string>
+    <string name="achievement_perfect_l6_id">CgkItMu16qgJEAIQLA</string>
+    
+    <string name="achievement_60plus_l7_id">CgkItMu16qgJEAIQJg</string>
+    <string name="achievement_80plus_l7_id">CgkItMu16qgJEAIQJw</string>
+    <string name="achievement_90plus_l7_id">CgkItMu16qgJEAIQKA</string>
+    <string name="achievement_perfect_l7_id">CgkItMu16qgJEAIQLQ</string>
 </resources>
