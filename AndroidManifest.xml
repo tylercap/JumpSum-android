@@ -29,30 +29,51 @@
         <activity
             android:name=".JumpSumLevel1"
             android:label="@string/level1" >
+	        <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+	            android:value="com.gmail.tylercap4.jumpsum.MainMenu" />
         </activity>
         <activity
             android:name=".JumpSumLevel2"
             android:label="@string/level2" >
+	        <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+	            android:value="com.gmail.tylercap4.jumpsum.MainMenu" />
         </activity>
         <activity
             android:name=".JumpSumLevel3"
             android:label="@string/level3" >
+	        <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+	            android:value="com.gmail.tylercap4.jumpsum.MainMenu" />
         </activity>
         <activity
             android:name=".JumpSumLevel4"
             android:label="@string/level4" >
+	        <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+	            android:value="com.gmail.tylercap4.jumpsum.MainMenu" />
         </activity>
         <activity
             android:name=".JumpSumLevel5"
             android:label="@string/level5" >
+	        <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+	            android:value="com.gmail.tylercap4.jumpsum.MainMenu" />
         </activity>
         <activity
             android:name=".JumpSumLevel6"
             android:label="@string/level6" >
+	        <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+	            android:value="com.gmail.tylercap4.jumpsum.MainMenu" />
         </activity>
         <activity
             android:name=".JumpSumLevel7"
             android:label="@string/level7" >
+	        <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+	            android:value="com.gmail.tylercap4.jumpsum.MainMenu" />
         </activity>
         <activity
             android:name=".HowToPage"

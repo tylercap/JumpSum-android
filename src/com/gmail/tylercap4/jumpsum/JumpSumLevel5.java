@@ -39,7 +39,6 @@ public class JumpSumLevel5 extends JumpSum
 	protected void updateAdditionalAchievements( int score ){
 		Games.Leaderboards.submitScore(mGoogleApiClient, getString(R.string.leaderboard_l5_id), score);		
     	
-		/*TODO:
 		if( score >= 60 ){
 			Games.Achievements.unlock(mGoogleApiClient, getString(R.string.achievement_60plus_l5_id));
 		}
@@ -59,7 +58,6 @@ public class JumpSumLevel5 extends JumpSum
 			Games.Achievements.increment(mGoogleApiClient, getString(R.string.achievement_perfect5_id), 1);
 			Games.Achievements.increment(mGoogleApiClient, getString(R.string.achievement_perfect20_id), 1);
 		}
-		*/
 	}
 	
     @Override
