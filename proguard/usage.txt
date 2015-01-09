@@ -219,11 +219,22 @@ android.support.v4.app.LoaderManager:
 android.support.v4.app.LoaderManagerImpl:
     static final java.lang.String TAG
     boolean mRetainingStarted
-android.support.v4.app.NavUtils
-android.support.v4.app.NavUtils$NavUtilsImpl
-android.support.v4.app.NavUtils$NavUtilsImplBase
-android.support.v4.app.NavUtils$NavUtilsImplJB
-android.support.v4.app.NavUtilsJB
+android.support.v4.app.NavUtils:
+    private static final java.lang.String TAG
+    public static final java.lang.String PARENT_ACTIVITY
+    159:159:public static boolean shouldUpRecreateTask(android.app.Activity,android.content.Intent)
+    231:241:public static android.content.Intent getParentActivityIntent(android.content.Context,java.lang.Class)
+    256:266:public static android.content.Intent getParentActivityIntent(android.content.Context,android.content.ComponentName)
+    307:308:private NavUtils()
+android.support.v4.app.NavUtils$NavUtilsImpl:
+    public abstract boolean shouldUpRecreateTask(android.app.Activity,android.content.Intent)
+android.support.v4.app.NavUtils$NavUtilsImplBase:
+    73:74:public boolean shouldUpRecreateTask(android.app.Activity,android.content.Intent)
+android.support.v4.app.NavUtils$NavUtilsImplJB:
+    115:115:public boolean shouldUpRecreateTask(android.app.Activity,android.content.Intent)
+android.support.v4.app.NavUtilsJB:
+    23:23:NavUtilsJB()
+    29:29:public static boolean shouldUpRecreateTask(android.app.Activity,android.content.Intent)
 android.support.v4.app.NotificationBuilderWithActions
 android.support.v4.app.NotificationBuilderWithBuilderAccessor
 android.support.v4.app.NotificationCompat
@@ -318,12 +329,30 @@ android.support.v4.content.CursorLoader
 android.support.v4.content.FileProvider
 android.support.v4.content.FileProvider$PathStrategy
 android.support.v4.content.FileProvider$SimplePathStrategy
-android.support.v4.content.IntentCompat
-android.support.v4.content.IntentCompat$IntentCompatImpl
-android.support.v4.content.IntentCompat$IntentCompatImplBase
-android.support.v4.content.IntentCompat$IntentCompatImplHC
-android.support.v4.content.IntentCompat$IntentCompatImplIcsMr1
-android.support.v4.content.IntentCompatHoneycomb
+android.support.v4.content.IntentCompat:
+    public static final java.lang.String ACTION_EXTERNAL_APPLICATIONS_AVAILABLE
+    public static final java.lang.String ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE
+    public static final java.lang.String EXTRA_CHANGED_PACKAGE_LIST
+    public static final java.lang.String EXTRA_CHANGED_UID_LIST
+    public static final java.lang.String EXTRA_HTML_TEXT
+    public static final int FLAG_ACTIVITY_TASK_ON_HOME
+    public static final int FLAG_ACTIVITY_CLEAR_TASK
+    95:97:private IntentCompat()
+    249:249:public static android.content.Intent makeMainSelectorActivity(java.lang.String,java.lang.String)
+    266:266:public static android.content.Intent makeRestartActivityTask(android.content.ComponentName)
+android.support.v4.content.IntentCompat$IntentCompatImpl:
+    public abstract android.content.Intent makeMainSelectorActivity(java.lang.String,java.lang.String)
+    public abstract android.content.Intent makeRestartActivityTask(android.content.ComponentName)
+android.support.v4.content.IntentCompat$IntentCompatImplBase:
+    51:53:public android.content.Intent makeMainSelectorActivity(java.lang.String,java.lang.String)
+    58:61:public android.content.Intent makeRestartActivityTask(android.content.ComponentName)
+android.support.v4.content.IntentCompat$IntentCompatImplHC:
+    72:72:public android.content.Intent makeRestartActivityTask(android.content.ComponentName)
+android.support.v4.content.IntentCompat$IntentCompatImplIcsMr1:
+    79:79:public android.content.Intent makeMainSelectorActivity(java.lang.String,java.lang.String)
+android.support.v4.content.IntentCompatHoneycomb:
+    22:22:IntentCompatHoneycomb()
+    28:28:public static android.content.Intent makeRestartActivityTask(android.content.ComponentName)
 android.support.v4.content.IntentCompatIcsMr1
 android.support.v4.content.Loader$ForceLoadContentObserver
 android.support.v4.content.LocalBroadcastManager:
@@ -2009,13 +2038,38 @@ com.gmail.tylercap4.jumpsum.JumpSum:
 com.gmail.tylercap4.jumpsum.JumpSumLevel1:
     private static final java.lang.String HIGH_SCORE_KEY
     private static final java.lang.String GAME_VALUES_KEY
-    private static final int rows
-    private static final int columns
+    private static final int ROWS
+    private static final int COLUMNS
 com.gmail.tylercap4.jumpsum.JumpSumLevel2:
     private static final java.lang.String HIGH_SCORE_KEY
     private static final java.lang.String GAME_VALUES_KEY
-    private static final int rows
-    private static final int columns
+    private static final int ROWS
+    private static final int COLUMNS
+com.gmail.tylercap4.jumpsum.JumpSumLevel3:
+    private static final java.lang.String HIGH_SCORE_KEY
+    private static final java.lang.String GAME_VALUES_KEY
+    private static final int ROWS
+    private static final int COLUMNS
+com.gmail.tylercap4.jumpsum.JumpSumLevel4:
+    private static final java.lang.String HIGH_SCORE_KEY
+    private static final java.lang.String GAME_VALUES_KEY
+    private static final int ROWS
+    private static final int COLUMNS
+com.gmail.tylercap4.jumpsum.JumpSumLevel5:
+    private static final java.lang.String HIGH_SCORE_KEY
+    private static final java.lang.String GAME_VALUES_KEY
+    private static final int ROWS
+    private static final int COLUMNS
+com.gmail.tylercap4.jumpsum.JumpSumLevel6:
+    private static final java.lang.String HIGH_SCORE_KEY
+    private static final java.lang.String GAME_VALUES_KEY
+    private static final int ROWS
+    private static final int COLUMNS
+com.gmail.tylercap4.jumpsum.JumpSumLevel7:
+    private static final java.lang.String HIGH_SCORE_KEY
+    private static final java.lang.String GAME_VALUES_KEY
+    private static final int ROWS
+    private static final int COLUMNS
 com.gmail.tylercap4.jumpsum.MainMenu:
     private static final java.lang.String SIGNED_IN_KEY
 com.gmail.tylercap4.jumpsum.R

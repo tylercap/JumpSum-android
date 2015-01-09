@@ -573,12 +573,48 @@ android.support.v4.app.LoaderManagerImpl$LoaderInfo -> android.support.v4.app.ad
     void callOnLoadFinished(android.support.v4.content.Loader,java.lang.Object) -> b
     java.lang.String toString() -> toString
     void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> a
-android.support.v4.app.NoSaveStateFrameLayout -> android.support.v4.app.ae:
+android.support.v4.app.NavUtils -> android.support.v4.app.ae:
+    android.support.v4.app.NavUtils$NavUtilsImpl IMPL -> a
+    void navigateUpFromSameTask(android.app.Activity) -> a
+    void navigateUpTo(android.app.Activity,android.content.Intent) -> a
+    android.content.Intent getParentActivityIntent(android.app.Activity) -> b
+    java.lang.String getParentActivityName(android.app.Activity) -> c
+    java.lang.String getParentActivityName(android.content.Context,android.content.ComponentName) -> a
+android.support.v4.app.NavUtils$NavUtilsImpl -> android.support.v4.app.af:
+    android.content.Intent getParentActivityIntent(android.app.Activity) -> a
+    void navigateUpTo(android.app.Activity,android.content.Intent) -> a
+    java.lang.String getParentActivityName(android.content.Context,android.content.pm.ActivityInfo) -> a
+android.support.v4.app.NavUtils$NavUtilsImplBase -> android.support.v4.app.ag:
+    android.content.Intent getParentActivityIntent(android.app.Activity) -> a
+    void navigateUpTo(android.app.Activity,android.content.Intent) -> a
+    java.lang.String getParentActivityName(android.content.Context,android.content.pm.ActivityInfo) -> a
+android.support.v4.app.NavUtils$NavUtilsImplJB -> android.support.v4.app.ah:
+    android.content.Intent getParentActivityIntent(android.app.Activity) -> a
+    android.content.Intent superGetParentActivityIntent(android.app.Activity) -> b
+    void navigateUpTo(android.app.Activity,android.content.Intent) -> a
+    java.lang.String getParentActivityName(android.content.Context,android.content.pm.ActivityInfo) -> a
+android.support.v4.app.NavUtilsJB -> android.support.v4.app.ai:
+    android.content.Intent getParentActivityIntent(android.app.Activity) -> a
+    void navigateUpTo(android.app.Activity,android.content.Intent) -> a
+    java.lang.String getParentActivityName(android.content.pm.ActivityInfo) -> a
+android.support.v4.app.NoSaveStateFrameLayout -> android.support.v4.app.aj:
     android.view.ViewGroup wrap(android.view.View) -> a
     void dispatchSaveInstanceState(android.util.SparseArray) -> dispatchSaveInstanceState
     void dispatchRestoreInstanceState(android.util.SparseArray) -> dispatchRestoreInstanceState
-android.support.v4.app.SuperNotCalledException -> android.support.v4.app.af:
-android.support.v4.content.Loader -> android.support.v4.a.a:
+android.support.v4.app.SuperNotCalledException -> android.support.v4.app.ak:
+android.support.v4.content.IntentCompat -> android.support.v4.a.a:
+    android.support.v4.content.IntentCompat$IntentCompatImpl IMPL -> a
+    android.content.Intent makeMainActivity(android.content.ComponentName) -> a
+android.support.v4.content.IntentCompat$IntentCompatImpl -> android.support.v4.a.b:
+    android.content.Intent makeMainActivity(android.content.ComponentName) -> a
+android.support.v4.content.IntentCompat$IntentCompatImplBase -> android.support.v4.a.c:
+    android.content.Intent makeMainActivity(android.content.ComponentName) -> a
+android.support.v4.content.IntentCompat$IntentCompatImplHC -> android.support.v4.a.d:
+    android.content.Intent makeMainActivity(android.content.ComponentName) -> a
+android.support.v4.content.IntentCompat$IntentCompatImplIcsMr1 -> android.support.v4.a.e:
+android.support.v4.content.IntentCompatHoneycomb -> android.support.v4.a.f:
+    android.content.Intent makeMainActivity(android.content.ComponentName) -> a
+android.support.v4.content.Loader -> android.support.v4.a.g:
     int mId -> mId
     android.support.v4.content.Loader$OnLoadCompleteListener mListener -> mListener
     android.content.Context mContext -> mContext
@@ -612,9 +648,9 @@ android.support.v4.content.Loader -> android.support.v4.a.a:
     java.lang.String dataToString(java.lang.Object) -> dataToString
     java.lang.String toString() -> toString
     void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> dump
-android.support.v4.content.Loader$OnLoadCompleteListener -> android.support.v4.a.b:
+android.support.v4.content.Loader$OnLoadCompleteListener -> android.support.v4.a.h:
     void onLoadComplete(android.support.v4.content.Loader,java.lang.Object) -> a
-android.support.v4.content.LocalBroadcastManager -> android.support.v4.a.c:
+android.support.v4.content.LocalBroadcastManager -> android.support.v4.a.i:
     android.content.Context mAppContext -> a
     java.util.HashMap mReceivers -> b
     java.util.HashMap mActions -> c
@@ -628,13 +664,13 @@ android.support.v4.content.LocalBroadcastManager -> android.support.v4.a.c:
     boolean sendBroadcast(android.content.Intent) -> a
     void executePendingBroadcasts() -> a
     void access$000(android.support.v4.content.LocalBroadcastManager) -> a
-android.support.v4.content.LocalBroadcastManager$1 -> android.support.v4.a.d:
+android.support.v4.content.LocalBroadcastManager$1 -> android.support.v4.a.j:
     android.support.v4.content.LocalBroadcastManager this$0 -> a
     void handleMessage(android.os.Message) -> handleMessage
-android.support.v4.content.LocalBroadcastManager$BroadcastRecord -> android.support.v4.a.e:
+android.support.v4.content.LocalBroadcastManager$BroadcastRecord -> android.support.v4.a.k:
     android.content.Intent intent -> a
     java.util.ArrayList receivers -> b
-android.support.v4.content.LocalBroadcastManager$ReceiverRecord -> android.support.v4.a.f:
+android.support.v4.content.LocalBroadcastManager$ReceiverRecord -> android.support.v4.a.l:
     android.content.IntentFilter filter -> a
     android.content.BroadcastReceiver receiver -> b
     boolean broadcasting -> c
@@ -8580,21 +8616,21 @@ com.gmail.tylercap4.jumpsum.JumpSum -> com.gmail.tylercap4.jumpsum.b:
     com.gmail.tylercap4.jumpsum.IndexedButton[][] widgets -> e
     boolean game_over -> k
     boolean current_drag -> l
-    com.facebook.UiLifecycleHelper uiHelper -> m
-    void setCorrectContentView() -> a
-    void initBoardAndWidgets() -> b
-    void doNewGame() -> c
-    java.lang.String getGameValsKey() -> d
-    java.lang.String getHighScoreKey() -> e
-    java.lang.String getGameAsString() -> f
-    int getScore() -> g
-    boolean checkGameOver() -> h
-    java.util.LinkedList getEligibleDropTargets(int,int) -> a
+    java.util.Stack undo_stack -> m
+    com.facebook.UiLifecycleHelper uiHelper -> n
+    int getRows() -> a
+    int getColumns() -> b
+    java.lang.String getGameValsKey() -> c
+    java.lang.String getHighScoreKey() -> d
+    void setCorrectContentView() -> e
+    void initWidgetIds() -> f
+    void doNewGame() -> g
     void updateAdditionalAchievements(int) -> a
-    void showLeaderboard() -> i
+    void showLeaderboard() -> h
     void onCreate(android.os.Bundle) -> onCreate
     void onStart() -> onStart
-    void reloadSignIn() -> j
+    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    void reloadSignIn() -> m
     void onConnected(android.os.Bundle) -> a
     void onConnectionSuspended(int) -> b
     void onConnectionFailed(com.google.android.gms.common.ConnectionResult) -> a
@@ -8603,13 +8639,21 @@ com.gmail.tylercap4.jumpsum.JumpSum -> com.gmail.tylercap4.jumpsum.b:
     void onDestroy() -> onDestroy
     void onPause() -> onPause
     void onResume() -> onResume
-    void showHowTo() -> k
+    void initBoardAndWidgets() -> i
+    java.lang.String getGameAsString() -> j
+    boolean checkGameOver() -> k
+    java.util.LinkedList getEligibleDropTargets(int,int) -> a
+    int getScore() -> l
+    void undoMove() -> n
+    void addToUndoStack() -> o
+    void disableUndo() -> p
+    void enableUndo() -> q
     void loadGame(java.lang.String) -> a
-    void newGame() -> l
+    void newGame() -> r
     void gameOver(boolean,int) -> a
     void updateAchievements(int) -> c
     void jumpedTile(com.gmail.tylercap4.jumpsum.IndexedButton,com.gmail.tylercap4.jumpsum.IndexedButton) -> a
-    int getHighScore() -> m
+    int getHighScore() -> s
     boolean updateHighScore(int) -> d
     void updateScore(int) -> e
     void setUpButton(com.gmail.tylercap4.jumpsum.IndexedButton,int) -> a
@@ -8675,31 +8719,75 @@ com.gmail.tylercap4.jumpsum.JumpSum$ValueSortable -> com.gmail.tylercap4.jumpsum
     int getValue() -> a
     int compareTo(java.lang.Object) -> compareTo
 com.gmail.tylercap4.jumpsum.JumpSumLevel1 -> com.gmail.tylercap4.jumpsum.JumpSumLevel1:
-    void setCorrectContentView() -> a
-    void showLeaderboard() -> i
+    void setCorrectContentView() -> e
+    int getRows() -> a
+    int getColumns() -> b
+    java.lang.String getGameValsKey() -> c
+    java.lang.String getHighScoreKey() -> d
+    void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
-    java.lang.String getGameValsKey() -> d
-    java.lang.String getHighScoreKey() -> e
-    void initBoardAndWidgets() -> b
-    java.lang.String getGameAsString() -> f
-    boolean checkGameOver() -> h
-    int getScore() -> g
-    java.util.LinkedList getEligibleDropTargets(int,int) -> a
-    void doNewGame() -> c
-    void initWidgetIds() -> j
+    void doNewGame() -> g
+    void initWidgetIds() -> f
 com.gmail.tylercap4.jumpsum.JumpSumLevel2 -> com.gmail.tylercap4.jumpsum.JumpSumLevel2:
-    void setCorrectContentView() -> a
-    void initBoardAndWidgets() -> b
-    java.lang.String getGameValsKey() -> d
-    java.lang.String getHighScoreKey() -> e
-    void showLeaderboard() -> i
+    void setCorrectContentView() -> e
+    int getRows() -> a
+    int getColumns() -> b
+    java.lang.String getGameValsKey() -> c
+    java.lang.String getHighScoreKey() -> d
+    void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
-    java.lang.String getGameAsString() -> f
-    boolean checkGameOver() -> h
-    int getScore() -> g
-    java.util.LinkedList getEligibleDropTargets(int,int) -> a
-    void doNewGame() -> c
-    void initWidgetIds() -> j
+    void doNewGame() -> g
+    void initWidgetIds() -> f
+com.gmail.tylercap4.jumpsum.JumpSumLevel3 -> com.gmail.tylercap4.jumpsum.JumpSumLevel3:
+    void setCorrectContentView() -> e
+    int getRows() -> a
+    int getColumns() -> b
+    java.lang.String getGameValsKey() -> c
+    java.lang.String getHighScoreKey() -> d
+    void showLeaderboard() -> h
+    void updateAdditionalAchievements(int) -> a
+    void doNewGame() -> g
+    void initWidgetIds() -> f
+com.gmail.tylercap4.jumpsum.JumpSumLevel4 -> com.gmail.tylercap4.jumpsum.JumpSumLevel4:
+    void setCorrectContentView() -> e
+    int getRows() -> a
+    int getColumns() -> b
+    java.lang.String getGameValsKey() -> c
+    java.lang.String getHighScoreKey() -> d
+    void showLeaderboard() -> h
+    void updateAdditionalAchievements(int) -> a
+    void doNewGame() -> g
+    void initWidgetIds() -> f
+com.gmail.tylercap4.jumpsum.JumpSumLevel5 -> com.gmail.tylercap4.jumpsum.JumpSumLevel5:
+    void setCorrectContentView() -> e
+    int getRows() -> a
+    int getColumns() -> b
+    java.lang.String getGameValsKey() -> c
+    java.lang.String getHighScoreKey() -> d
+    void showLeaderboard() -> h
+    void updateAdditionalAchievements(int) -> a
+    void doNewGame() -> g
+    void initWidgetIds() -> f
+com.gmail.tylercap4.jumpsum.JumpSumLevel6 -> com.gmail.tylercap4.jumpsum.JumpSumLevel6:
+    void setCorrectContentView() -> e
+    int getRows() -> a
+    int getColumns() -> b
+    java.lang.String getGameValsKey() -> c
+    java.lang.String getHighScoreKey() -> d
+    void showLeaderboard() -> h
+    void updateAdditionalAchievements(int) -> a
+    void doNewGame() -> g
+    void initWidgetIds() -> f
+com.gmail.tylercap4.jumpsum.JumpSumLevel7 -> com.gmail.tylercap4.jumpsum.JumpSumLevel7:
+    void setCorrectContentView() -> e
+    int getRows() -> a
+    int getColumns() -> b
+    java.lang.String getGameValsKey() -> c
+    java.lang.String getHighScoreKey() -> d
+    void showLeaderboard() -> h
+    void updateAdditionalAchievements(int) -> a
+    void doNewGame() -> g
+    void initWidgetIds() -> f
 com.gmail.tylercap4.jumpsum.MainMenu -> com.gmail.tylercap4.jumpsum.MainMenu:
     int RC_SIGN_IN -> b
     com.google.android.gms.common.api.GoogleApiClient mGoogleApiClient -> a
@@ -8719,16 +8807,31 @@ com.gmail.tylercap4.jumpsum.MainMenu -> com.gmail.tylercap4.jumpsum.MainMenu:
 com.gmail.tylercap4.jumpsum.MainMenu$1 -> com.gmail.tylercap4.jumpsum.p:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$2 -> com.gmail.tylercap4.jumpsum.q:
+com.gmail.tylercap4.jumpsum.MainMenu$10 -> com.gmail.tylercap4.jumpsum.q:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$3 -> com.gmail.tylercap4.jumpsum.r:
+com.gmail.tylercap4.jumpsum.MainMenu$2 -> com.gmail.tylercap4.jumpsum.r:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$4 -> com.gmail.tylercap4.jumpsum.s:
+com.gmail.tylercap4.jumpsum.MainMenu$3 -> com.gmail.tylercap4.jumpsum.s:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$5 -> com.gmail.tylercap4.jumpsum.t:
+com.gmail.tylercap4.jumpsum.MainMenu$4 -> com.gmail.tylercap4.jumpsum.t:
+    com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.gmail.tylercap4.jumpsum.MainMenu$5 -> com.gmail.tylercap4.jumpsum.u:
+    com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.gmail.tylercap4.jumpsum.MainMenu$6 -> com.gmail.tylercap4.jumpsum.v:
+    com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.gmail.tylercap4.jumpsum.MainMenu$7 -> com.gmail.tylercap4.jumpsum.w:
+    com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.gmail.tylercap4.jumpsum.MainMenu$8 -> com.gmail.tylercap4.jumpsum.x:
+    com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.gmail.tylercap4.jumpsum.MainMenu$9 -> com.gmail.tylercap4.jumpsum.y:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
 com.gmail.tylercap4.jumpsum.basegameutils.BaseGameUtils -> com.gmail.tylercap4.jumpsum.a.a:
