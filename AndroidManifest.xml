@@ -76,6 +76,27 @@
 	            android:value="com.gmail.tylercap4.jumpsum.MainMenu" />
         </activity>
         <activity
+            android:name=".JumpSumLevel8"
+            android:label="@string/level8" >
+	        <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+	            android:value="com.gmail.tylercap4.jumpsum.MainMenu" />
+        </activity>
+        <activity
+            android:name=".JumpSumLevel9"
+            android:label="@string/level9" >
+	        <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+	            android:value="com.gmail.tylercap4.jumpsum.MainMenu" />
+        </activity>
+        <activity
+            android:name=".JumpSumLevel10"
+            android:label="@string/level10" >
+	        <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+	            android:value="com.gmail.tylercap4.jumpsum.MainMenu" />
+        </activity>
+        <activity
             android:name=".HowToPage"
             android:label="@string/how_to_page" >
         </activity>
