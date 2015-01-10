@@ -6409,8 +6409,15 @@ com.gmail.tylercap4.jumpsum.HowToPage: HowToPage()
 com.gmail.tylercap4.jumpsum.IndexedButton: int getRow()
 com.gmail.tylercap4.jumpsum.IndexedButton: int getColumn()
 com.gmail.tylercap4.jumpsum.JumpSum: JumpSum()
+com.gmail.tylercap4.jumpsum.JumpSum7x5: JumpSum7x5()
+com.gmail.tylercap4.jumpsum.JumpSum7x6: JumpSum7x6()
+com.gmail.tylercap4.jumpsum.JumpSum7x7: JumpSum7x7()
+com.gmail.tylercap4.jumpsum.JumpSum8x6: JumpSum8x6()
+com.gmail.tylercap4.jumpsum.JumpSum8x7: JumpSum8x7()
 com.gmail.tylercap4.jumpsum.JumpSumLevel1
 com.gmail.tylercap4.jumpsum.JumpSumLevel1: JumpSumLevel1()
+com.gmail.tylercap4.jumpsum.JumpSumLevel10
+com.gmail.tylercap4.jumpsum.JumpSumLevel10: JumpSumLevel10()
 com.gmail.tylercap4.jumpsum.JumpSumLevel2
 com.gmail.tylercap4.jumpsum.JumpSumLevel2: JumpSumLevel2()
 com.gmail.tylercap4.jumpsum.JumpSumLevel3
@@ -6423,6 +6430,10 @@ com.gmail.tylercap4.jumpsum.JumpSumLevel6
 com.gmail.tylercap4.jumpsum.JumpSumLevel6: JumpSumLevel6()
 com.gmail.tylercap4.jumpsum.JumpSumLevel7
 com.gmail.tylercap4.jumpsum.JumpSumLevel7: JumpSumLevel7()
+com.gmail.tylercap4.jumpsum.JumpSumLevel8
+com.gmail.tylercap4.jumpsum.JumpSumLevel8: JumpSumLevel8()
+com.gmail.tylercap4.jumpsum.JumpSumLevel9
+com.gmail.tylercap4.jumpsum.JumpSumLevel9: JumpSumLevel9()
 com.gmail.tylercap4.jumpsum.MainMenu
 com.gmail.tylercap4.jumpsum.MainMenu: MainMenu()
 com.gmail.tylercap4.jumpsum.R$anim: int abc_fade_in
@@ -6976,6 +6987,7 @@ com.gmail.tylercap4.jumpsum.R$id: int inline
 com.gmail.tylercap4.jumpsum.R$id: int large
 com.gmail.tylercap4.jumpsum.R$id: int leaderboard_button
 com.gmail.tylercap4.jumpsum.R$id: int left
+com.gmail.tylercap4.jumpsum.R$id: int level10_button
 com.gmail.tylercap4.jumpsum.R$id: int level1_button
 com.gmail.tylercap4.jumpsum.R$id: int level2_button
 com.gmail.tylercap4.jumpsum.R$id: int level3_button
@@ -6983,6 +6995,8 @@ com.gmail.tylercap4.jumpsum.R$id: int level4_button
 com.gmail.tylercap4.jumpsum.R$id: int level5_button
 com.gmail.tylercap4.jumpsum.R$id: int level6_button
 com.gmail.tylercap4.jumpsum.R$id: int level7_button
+com.gmail.tylercap4.jumpsum.R$id: int level8_button
+com.gmail.tylercap4.jumpsum.R$id: int level9_button
 com.gmail.tylercap4.jumpsum.R$id: int levelChoices
 com.gmail.tylercap4.jumpsum.R$id: int listMode
 com.gmail.tylercap4.jumpsum.R$id: int list_item
@@ -7147,6 +7161,7 @@ com.gmail.tylercap4.jumpsum.R$layout: int com_facebook_usersettingsfragment
 com.gmail.tylercap4.jumpsum.R$layout: int how_to
 com.gmail.tylercap4.jumpsum.R$layout: int jump_sum_7x5
 com.gmail.tylercap4.jumpsum.R$layout: int jump_sum_7x6
+com.gmail.tylercap4.jumpsum.R$layout: int jump_sum_7x7
 com.gmail.tylercap4.jumpsum.R$layout: int jump_sum_8x6
 com.gmail.tylercap4.jumpsum.R$layout: int jump_sum_8x7
 com.gmail.tylercap4.jumpsum.R$layout: int main_menu
@@ -7169,38 +7184,50 @@ com.gmail.tylercap4.jumpsum.R$string: int accept
 com.gmail.tylercap4.jumpsum.R$string: int achievement_10000g_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_10000p_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_60plus_id
+com.gmail.tylercap4.jumpsum.R$string: int achievement_60plus_l10_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_60plus_l2_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_60plus_l3_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_60plus_l4_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_60plus_l5_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_60plus_l6_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_60plus_l7_id
+com.gmail.tylercap4.jumpsum.R$string: int achievement_60plus_l8_id
+com.gmail.tylercap4.jumpsum.R$string: int achievement_60plus_l9_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_80plus_id
+com.gmail.tylercap4.jumpsum.R$string: int achievement_80plus_l10_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_80plus_l2_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_80plus_l3_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_80plus_l4_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_80plus_l5_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_80plus_l6_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_80plus_l7_id
+com.gmail.tylercap4.jumpsum.R$string: int achievement_80plus_l8_id
+com.gmail.tylercap4.jumpsum.R$string: int achievement_80plus_l9_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_90plus20_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_90plus5_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_90plus_id
+com.gmail.tylercap4.jumpsum.R$string: int achievement_90plus_l10_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_90plus_l2_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_90plus_l3_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_90plus_l4_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_90plus_l5_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_90plus_l6_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_90plus_l7_id
+com.gmail.tylercap4.jumpsum.R$string: int achievement_90plus_l8_id
+com.gmail.tylercap4.jumpsum.R$string: int achievement_90plus_l9_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_95plus100_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_perfect20_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_perfect5_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_perfect_id
+com.gmail.tylercap4.jumpsum.R$string: int achievement_perfect_l10_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_perfect_l2_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_perfect_l3_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_perfect_l4_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_perfect_l5_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_perfect_l6_id
 com.gmail.tylercap4.jumpsum.R$string: int achievement_perfect_l7_id
+com.gmail.tylercap4.jumpsum.R$string: int achievement_perfect_l8_id
+com.gmail.tylercap4.jumpsum.R$string: int achievement_perfect_l9_id
 com.gmail.tylercap4.jumpsum.R$string: int app_misconfigured
 com.gmail.tylercap4.jumpsum.R$string: int app_name
 com.gmail.tylercap4.jumpsum.R$string: int chooseLevel
@@ -7284,13 +7311,18 @@ com.gmail.tylercap4.jumpsum.R$string: int how_to
 com.gmail.tylercap4.jumpsum.R$string: int how_to_page
 com.gmail.tylercap4.jumpsum.R$string: int leaderboard
 com.gmail.tylercap4.jumpsum.R$string: int leaderboard_id
+com.gmail.tylercap4.jumpsum.R$string: int leaderboard_l10_id
 com.gmail.tylercap4.jumpsum.R$string: int leaderboard_l2_id
 com.gmail.tylercap4.jumpsum.R$string: int leaderboard_l3_id
 com.gmail.tylercap4.jumpsum.R$string: int leaderboard_l4_id
 com.gmail.tylercap4.jumpsum.R$string: int leaderboard_l5_id
 com.gmail.tylercap4.jumpsum.R$string: int leaderboard_l6_id
 com.gmail.tylercap4.jumpsum.R$string: int leaderboard_l7_id
+com.gmail.tylercap4.jumpsum.R$string: int leaderboard_l8_id
+com.gmail.tylercap4.jumpsum.R$string: int leaderboard_l9_id
 com.gmail.tylercap4.jumpsum.R$string: int level1
+com.gmail.tylercap4.jumpsum.R$string: int level10
+com.gmail.tylercap4.jumpsum.R$string: int level10_button
 com.gmail.tylercap4.jumpsum.R$string: int level1_button
 com.gmail.tylercap4.jumpsum.R$string: int level2
 com.gmail.tylercap4.jumpsum.R$string: int level2_button
@@ -7304,6 +7336,10 @@ com.gmail.tylercap4.jumpsum.R$string: int level6
 com.gmail.tylercap4.jumpsum.R$string: int level6_button
 com.gmail.tylercap4.jumpsum.R$string: int level7
 com.gmail.tylercap4.jumpsum.R$string: int level7_button
+com.gmail.tylercap4.jumpsum.R$string: int level8
+com.gmail.tylercap4.jumpsum.R$string: int level8_button
+com.gmail.tylercap4.jumpsum.R$string: int level9
+com.gmail.tylercap4.jumpsum.R$string: int level9_button
 com.gmail.tylercap4.jumpsum.R$string: int license_failed
 com.gmail.tylercap4.jumpsum.R$string: int new_game
 com.gmail.tylercap4.jumpsum.R$string: int objective_title

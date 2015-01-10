@@ -2035,41 +2035,51 @@ com.gmail.tylercap4.jumpsum.BuildConfig
 com.gmail.tylercap4.jumpsum.JumpSum:
     protected static final java.lang.String TAG
     private static final java.lang.String SIGNED_IN_KEY
+com.gmail.tylercap4.jumpsum.JumpSum7x5:
+    private static final int ROWS
+    private static final int COLUMNS
+com.gmail.tylercap4.jumpsum.JumpSum7x6:
+    private static final int ROWS
+    private static final int COLUMNS
+com.gmail.tylercap4.jumpsum.JumpSum7x7:
+    private static final int ROWS
+    private static final int COLUMNS
+com.gmail.tylercap4.jumpsum.JumpSum8x6:
+    private static final int ROWS
+    private static final int COLUMNS
+com.gmail.tylercap4.jumpsum.JumpSum8x7:
+    private static final int ROWS
+    private static final int COLUMNS
 com.gmail.tylercap4.jumpsum.JumpSumLevel1:
     private static final java.lang.String HIGH_SCORE_KEY
     private static final java.lang.String GAME_VALUES_KEY
-    private static final int ROWS
-    private static final int COLUMNS
+com.gmail.tylercap4.jumpsum.JumpSumLevel10:
+    private static final java.lang.String HIGH_SCORE_KEY
+    private static final java.lang.String GAME_VALUES_KEY
 com.gmail.tylercap4.jumpsum.JumpSumLevel2:
     private static final java.lang.String HIGH_SCORE_KEY
     private static final java.lang.String GAME_VALUES_KEY
-    private static final int ROWS
-    private static final int COLUMNS
 com.gmail.tylercap4.jumpsum.JumpSumLevel3:
     private static final java.lang.String HIGH_SCORE_KEY
     private static final java.lang.String GAME_VALUES_KEY
-    private static final int ROWS
-    private static final int COLUMNS
 com.gmail.tylercap4.jumpsum.JumpSumLevel4:
     private static final java.lang.String HIGH_SCORE_KEY
     private static final java.lang.String GAME_VALUES_KEY
-    private static final int ROWS
-    private static final int COLUMNS
 com.gmail.tylercap4.jumpsum.JumpSumLevel5:
     private static final java.lang.String HIGH_SCORE_KEY
     private static final java.lang.String GAME_VALUES_KEY
-    private static final int ROWS
-    private static final int COLUMNS
 com.gmail.tylercap4.jumpsum.JumpSumLevel6:
     private static final java.lang.String HIGH_SCORE_KEY
     private static final java.lang.String GAME_VALUES_KEY
-    private static final int ROWS
-    private static final int COLUMNS
 com.gmail.tylercap4.jumpsum.JumpSumLevel7:
     private static final java.lang.String HIGH_SCORE_KEY
     private static final java.lang.String GAME_VALUES_KEY
-    private static final int ROWS
-    private static final int COLUMNS
+com.gmail.tylercap4.jumpsum.JumpSumLevel8:
+    private static final java.lang.String HIGH_SCORE_KEY
+    private static final java.lang.String GAME_VALUES_KEY
+com.gmail.tylercap4.jumpsum.JumpSumLevel9:
+    private static final java.lang.String HIGH_SCORE_KEY
+    private static final java.lang.String GAME_VALUES_KEY
 com.gmail.tylercap4.jumpsum.MainMenu:
     private static final java.lang.String SIGNED_IN_KEY
 com.gmail.tylercap4.jumpsum.R

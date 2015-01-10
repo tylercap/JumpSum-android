@@ -8718,76 +8718,91 @@ com.gmail.tylercap4.jumpsum.JumpSum$ValueSortable -> com.gmail.tylercap4.jumpsum
     int compareTo(com.gmail.tylercap4.jumpsum.JumpSum$ValueSortable) -> a
     int getValue() -> a
     int compareTo(java.lang.Object) -> compareTo
+com.gmail.tylercap4.jumpsum.JumpSum7x5 -> com.gmail.tylercap4.jumpsum.p:
+    int getRows() -> a
+    int getColumns() -> b
+    void setCorrectContentView() -> e
+    void initWidgetIds() -> f
+com.gmail.tylercap4.jumpsum.JumpSum7x6 -> com.gmail.tylercap4.jumpsum.q:
+    int getRows() -> a
+    int getColumns() -> b
+    void setCorrectContentView() -> e
+    void initWidgetIds() -> f
+com.gmail.tylercap4.jumpsum.JumpSum7x7 -> com.gmail.tylercap4.jumpsum.r:
+    int getRows() -> a
+    int getColumns() -> b
+    void setCorrectContentView() -> e
+    void initWidgetIds() -> f
+com.gmail.tylercap4.jumpsum.JumpSum8x6 -> com.gmail.tylercap4.jumpsum.s:
+    int getRows() -> a
+    int getColumns() -> b
+    void setCorrectContentView() -> e
+    void initWidgetIds() -> f
+com.gmail.tylercap4.jumpsum.JumpSum8x7 -> com.gmail.tylercap4.jumpsum.t:
+    int getRows() -> a
+    int getColumns() -> b
+    void setCorrectContentView() -> e
+    void initWidgetIds() -> f
 com.gmail.tylercap4.jumpsum.JumpSumLevel1 -> com.gmail.tylercap4.jumpsum.JumpSumLevel1:
-    void setCorrectContentView() -> e
-    int getRows() -> a
-    int getColumns() -> b
     java.lang.String getGameValsKey() -> c
     java.lang.String getHighScoreKey() -> d
     void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
     void doNewGame() -> g
-    void initWidgetIds() -> f
+com.gmail.tylercap4.jumpsum.JumpSumLevel10 -> com.gmail.tylercap4.jumpsum.JumpSumLevel10:
+    java.lang.String getGameValsKey() -> c
+    java.lang.String getHighScoreKey() -> d
+    void showLeaderboard() -> h
+    void updateAdditionalAchievements(int) -> a
+    void doNewGame() -> g
 com.gmail.tylercap4.jumpsum.JumpSumLevel2 -> com.gmail.tylercap4.jumpsum.JumpSumLevel2:
-    void setCorrectContentView() -> e
-    int getRows() -> a
-    int getColumns() -> b
     java.lang.String getGameValsKey() -> c
     java.lang.String getHighScoreKey() -> d
     void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
     void doNewGame() -> g
-    void initWidgetIds() -> f
 com.gmail.tylercap4.jumpsum.JumpSumLevel3 -> com.gmail.tylercap4.jumpsum.JumpSumLevel3:
-    void setCorrectContentView() -> e
-    int getRows() -> a
-    int getColumns() -> b
     java.lang.String getGameValsKey() -> c
     java.lang.String getHighScoreKey() -> d
     void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
     void doNewGame() -> g
-    void initWidgetIds() -> f
 com.gmail.tylercap4.jumpsum.JumpSumLevel4 -> com.gmail.tylercap4.jumpsum.JumpSumLevel4:
-    void setCorrectContentView() -> e
-    int getRows() -> a
-    int getColumns() -> b
     java.lang.String getGameValsKey() -> c
     java.lang.String getHighScoreKey() -> d
     void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
     void doNewGame() -> g
-    void initWidgetIds() -> f
 com.gmail.tylercap4.jumpsum.JumpSumLevel5 -> com.gmail.tylercap4.jumpsum.JumpSumLevel5:
-    void setCorrectContentView() -> e
-    int getRows() -> a
-    int getColumns() -> b
     java.lang.String getGameValsKey() -> c
     java.lang.String getHighScoreKey() -> d
     void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
     void doNewGame() -> g
-    void initWidgetIds() -> f
 com.gmail.tylercap4.jumpsum.JumpSumLevel6 -> com.gmail.tylercap4.jumpsum.JumpSumLevel6:
-    void setCorrectContentView() -> e
-    int getRows() -> a
-    int getColumns() -> b
     java.lang.String getGameValsKey() -> c
     java.lang.String getHighScoreKey() -> d
     void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
     void doNewGame() -> g
-    void initWidgetIds() -> f
 com.gmail.tylercap4.jumpsum.JumpSumLevel7 -> com.gmail.tylercap4.jumpsum.JumpSumLevel7:
-    void setCorrectContentView() -> e
-    int getRows() -> a
-    int getColumns() -> b
     java.lang.String getGameValsKey() -> c
     java.lang.String getHighScoreKey() -> d
     void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
     void doNewGame() -> g
-    void initWidgetIds() -> f
+com.gmail.tylercap4.jumpsum.JumpSumLevel8 -> com.gmail.tylercap4.jumpsum.JumpSumLevel8:
+    java.lang.String getGameValsKey() -> c
+    java.lang.String getHighScoreKey() -> d
+    void showLeaderboard() -> h
+    void updateAdditionalAchievements(int) -> a
+    void doNewGame() -> g
+com.gmail.tylercap4.jumpsum.JumpSumLevel9 -> com.gmail.tylercap4.jumpsum.JumpSumLevel9:
+    java.lang.String getGameValsKey() -> c
+    java.lang.String getHighScoreKey() -> d
+    void showLeaderboard() -> h
+    void updateAdditionalAchievements(int) -> a
+    void doNewGame() -> g
 com.gmail.tylercap4.jumpsum.MainMenu -> com.gmail.tylercap4.jumpsum.MainMenu:
     int RC_SIGN_IN -> b
     com.google.android.gms.common.api.GoogleApiClient mGoogleApiClient -> a
@@ -8804,34 +8819,43 @@ com.gmail.tylercap4.jumpsum.MainMenu -> com.gmail.tylercap4.jumpsum.MainMenu:
     void onResume() -> onResume
     void access$0(com.gmail.tylercap4.jumpsum.MainMenu,boolean) -> a
     void access$1(com.gmail.tylercap4.jumpsum.MainMenu) -> a
-com.gmail.tylercap4.jumpsum.MainMenu$1 -> com.gmail.tylercap4.jumpsum.p:
+com.gmail.tylercap4.jumpsum.MainMenu$1 -> com.gmail.tylercap4.jumpsum.u:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$10 -> com.gmail.tylercap4.jumpsum.q:
+com.gmail.tylercap4.jumpsum.MainMenu$10 -> com.gmail.tylercap4.jumpsum.v:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$2 -> com.gmail.tylercap4.jumpsum.r:
+com.gmail.tylercap4.jumpsum.MainMenu$11 -> com.gmail.tylercap4.jumpsum.w:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$3 -> com.gmail.tylercap4.jumpsum.s:
+com.gmail.tylercap4.jumpsum.MainMenu$12 -> com.gmail.tylercap4.jumpsum.x:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$4 -> com.gmail.tylercap4.jumpsum.t:
+com.gmail.tylercap4.jumpsum.MainMenu$13 -> com.gmail.tylercap4.jumpsum.y:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$5 -> com.gmail.tylercap4.jumpsum.u:
+com.gmail.tylercap4.jumpsum.MainMenu$2 -> com.gmail.tylercap4.jumpsum.z:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$6 -> com.gmail.tylercap4.jumpsum.v:
+com.gmail.tylercap4.jumpsum.MainMenu$3 -> com.gmail.tylercap4.jumpsum.aa:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$7 -> com.gmail.tylercap4.jumpsum.w:
+com.gmail.tylercap4.jumpsum.MainMenu$4 -> com.gmail.tylercap4.jumpsum.ab:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$8 -> com.gmail.tylercap4.jumpsum.x:
+com.gmail.tylercap4.jumpsum.MainMenu$5 -> com.gmail.tylercap4.jumpsum.ac:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$9 -> com.gmail.tylercap4.jumpsum.y:
+com.gmail.tylercap4.jumpsum.MainMenu$6 -> com.gmail.tylercap4.jumpsum.ad:
+    com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.gmail.tylercap4.jumpsum.MainMenu$7 -> com.gmail.tylercap4.jumpsum.ae:
+    com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.gmail.tylercap4.jumpsum.MainMenu$8 -> com.gmail.tylercap4.jumpsum.af:
+    com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.gmail.tylercap4.jumpsum.MainMenu$9 -> com.gmail.tylercap4.jumpsum.ag:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
 com.gmail.tylercap4.jumpsum.basegameutils.BaseGameUtils -> com.gmail.tylercap4.jumpsum.a.a:
