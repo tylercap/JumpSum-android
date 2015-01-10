@@ -111,6 +111,24 @@
 		   		style="@style/CustomButton" 
 		        android:layout_width="match_parent"
 		    	android:layout_margin="5dp"/>
+		    <Button
+		        android:id="@+id/level8_button"
+		        android:text="@string/level8_button"
+		   		style="@style/CustomButton" 
+		        android:layout_width="match_parent"
+		    	android:layout_margin="5dp"/>
+		    <Button
+		        android:id="@+id/level9_button"
+		        android:text="@string/level9_button"
+		   		style="@style/CustomButton" 
+		        android:layout_width="match_parent"
+		    	android:layout_margin="5dp"/>
+		    <Button
+		        android:id="@+id/level10_button"
+		        android:text="@string/level10_button"
+		   		style="@style/CustomButton" 
+		        android:layout_width="match_parent"
+		    	android:layout_margin="5dp"/>
 		</LinearLayout>
 	</ScrollView>
 </LinearLayout>
