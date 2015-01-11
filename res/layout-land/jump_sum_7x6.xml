@@ -174,12 +174,16 @@
 	        <Button
 		        android:id="@+id/undoButton"
 		        android:text="@string/undo"
-	    		style="@style/UndoButton" />
+	    		style="@style/UndoButton"  
+	    		android:layout_gravity="left"
+        		android:layout_weight="1" />
 	        
 	        <Button
 		        android:id="@+id/newGameButton"
 		        android:text="@string/new_game"
-	    		style="@style/NewGameButton" />
+	    		style="@style/NewGameButton"
+	    		android:layout_gravity="right"
+        		android:layout_weight="1" />
 	        
 	    </LinearLayout>
 
