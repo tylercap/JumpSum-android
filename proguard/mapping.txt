@@ -8597,6 +8597,7 @@ com.facebook.widget.WebDialog$RequestsDialogBuilder -> com.facebook.widget.WebDi
     com.facebook.widget.WebDialog$BuilderBase setOnCompleteListener(com.facebook.widget.WebDialog$OnCompleteListener) -> setOnCompleteListener
 com.gmail.tylercap4.jumpsum.HowToPage -> com.gmail.tylercap4.jumpsum.HowToPage:
     void onCreate(android.os.Bundle) -> onCreate
+    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
 com.gmail.tylercap4.jumpsum.IndexedButton -> com.gmail.tylercap4.jumpsum.a:
     int row -> a
     int column -> b
