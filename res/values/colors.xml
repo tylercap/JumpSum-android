@@ -9,8 +9,9 @@
     <color name="how_to_border">#FFFFFF</color>
     <color name="new_game_back">#55DD40</color>
     <color name="new_game_border">#7711AA</color>
-    <color name="how_to_text">#500977</color>
+    <color name="how_to_text">#220077</color>
     <color name="sign_out_back">#DD4B39</color>
     <color name="sign_out_border">#FFFFFF</color>
+    <color name="score_text">#220077</color>
     
 </resources>

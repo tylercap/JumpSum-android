@@ -6653,6 +6653,7 @@ com.gmail.tylercap4.jumpsum.R$color: int how_to_border
 com.gmail.tylercap4.jumpsum.R$color: int how_to_text
 com.gmail.tylercap4.jumpsum.R$color: int new_game_back
 com.gmail.tylercap4.jumpsum.R$color: int new_game_border
+com.gmail.tylercap4.jumpsum.R$color: int score_text
 com.gmail.tylercap4.jumpsum.R$color: int sign_out_back
 com.gmail.tylercap4.jumpsum.R$color: int sign_out_border
 com.gmail.tylercap4.jumpsum.R$color: int undo_back

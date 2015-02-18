@@ -57,8 +57,9 @@
         android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
         android:text="@string/current_score"
-        android:textColor="@color/button_border"
+        android:textColor="@color/score_text"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
         android:layout_weight="1" 
     	android:gravity="center" />
     
@@ -190,8 +191,9 @@
 	        android:layout_width="0dp"
 	        android:layout_height="wrap_content"
 	        android:text="@string/high_score"
-	        android:textColor="@color/button_border"
+	        android:textColor="@color/score_text"
 	        android:textAppearance="?android:attr/textAppearanceMedium"  
+        	android:textStyle="bold"
         	android:layout_weight="1"
     		android:gravity="center" />
         

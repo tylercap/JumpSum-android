@@ -153,8 +153,9 @@
 	        android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
 	        android:text="@string/current_score"
-	        android:textColor="@color/button_border"
+	        android:textColor="@color/score_text"
 	        android:textAppearance="?android:attr/textAppearanceLarge"
+        	android:textStyle="bold"
 	        android:layout_weight="12" 
 	    	android:gravity="center" />
 
@@ -165,8 +166,9 @@
 	        android:layout_weight="6"
 	        android:gravity="center"
 	        android:text="@string/high_score"
-	        android:textColor="@color/button_border"
-	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	        android:textColor="@color/score_text"
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+        	android:textStyle="bold" />
 	    
         <Button
 		    android:id="@+id/leaderboard_button"
