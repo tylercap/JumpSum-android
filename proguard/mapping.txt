@@ -3861,6 +3861,7 @@ com.facebook.AppEventsLogger -> com.facebook.AppEventsLogger:
     int FLUSH_PERIOD_IN_SECONDS -> FLUSH_PERIOD_IN_SECONDS
     int APP_SUPPORTS_ATTRIBUTION_ID_RECHECK_PERIOD_IN_SECONDS -> APP_SUPPORTS_ATTRIBUTION_ID_RECHECK_PERIOD_IN_SECONDS
     int FLUSH_APP_SESSION_INFO_IN_SECONDS -> FLUSH_APP_SESSION_INFO_IN_SECONDS
+    java.lang.String APP_EVENT_PREFERENCES -> APP_EVENT_PREFERENCES
     java.lang.String SOURCE_APPLICATION_HAS_BEEN_SET_BY_THIS_INTENT -> SOURCE_APPLICATION_HAS_BEEN_SET_BY_THIS_INTENT
     android.content.Context context -> context
     com.facebook.AppEventsLogger$AccessTokenAppIdPair accessTokenAppId -> accessTokenAppId
@@ -3870,7 +3871,7 @@ com.facebook.AppEventsLogger -> com.facebook.AppEventsLogger:
     boolean requestInFlight -> requestInFlight
     android.content.Context applicationContext -> applicationContext
     java.lang.Object staticLock -> staticLock
-    java.lang.String hashedDeviceAndAppId -> hashedDeviceAndAppId
+    java.lang.String anonymousAppDeviceGUID -> anonymousAppDeviceGUID
     java.lang.String sourceApplication -> sourceApplication
     boolean isOpenedByApplink -> isOpenedByApplink
     java.lang.String ACTION_APP_EVENTS_FLUSHED -> ACTION_APP_EVENTS_FLUSHED
@@ -3920,6 +3921,7 @@ com.facebook.AppEventsLogger -> com.facebook.AppEventsLogger:
     void setSourceApplication(java.lang.String,boolean) -> setSourceApplication
     java.lang.String getSourceApplication() -> getSourceApplication
     void resetSourceApplication() -> resetSourceApplication
+    java.lang.String getAnonymousAppDeviceGUID(android.content.Context) -> getAnonymousAppDeviceGUID
     android.content.Context access$0() -> access$0
     java.lang.String access$1() -> access$1
     java.util.concurrent.ScheduledThreadPoolExecutor access$2() -> access$2
@@ -4050,7 +4052,7 @@ com.facebook.AppEventsLogger$SessionEventsState -> com.facebook.AppEventsLogger$
     int numSkippedEventsDueToFullBuffer -> numSkippedEventsDueToFullBuffer
     com.facebook.internal.AttributionIdentifiers attributionIdentifiers -> attributionIdentifiers
     java.lang.String packageName -> packageName
-    java.lang.String hashedDeviceAndAppId -> hashedDeviceAndAppId
+    java.lang.String anonymousAppDeviceGUID -> anonymousAppDeviceGUID
     java.lang.String EVENT_COUNT_KEY -> EVENT_COUNT_KEY
     java.lang.String ENCODED_EVENTS_KEY -> ENCODED_EVENTS_KEY
     java.lang.String NUM_SKIPPED_KEY -> NUM_SKIPPED_KEY
@@ -4058,10 +4060,10 @@ com.facebook.AppEventsLogger$SessionEventsState -> com.facebook.AppEventsLogger$
     void addEvent(com.facebook.AppEventsLogger$AppEvent) -> addEvent
     int getAccumulatedEventCount() -> getAccumulatedEventCount
     void clearInFlightAndStats(boolean) -> clearInFlightAndStats
-    int populateRequest(com.facebook.Request,boolean,boolean,boolean) -> populateRequest
+    int populateRequest(com.facebook.Request,boolean,boolean) -> populateRequest
     java.util.List getEventsToPersist() -> getEventsToPersist
     void accumulatePersistedEvents(java.util.List) -> accumulatePersistedEvents
-    void populateRequest(com.facebook.Request,int,org.json.JSONArray,boolean,boolean) -> populateRequest
+    void populateRequest(com.facebook.Request,int,org.json.JSONArray,boolean) -> populateRequest
     byte[] getStringAsByteArray(java.lang.String) -> getStringAsByteArray
 com.facebook.AppLinkData -> com.facebook.AppLinkData:
     java.lang.String ARGUMENTS_TAPTIME_KEY -> ARGUMENTS_TAPTIME_KEY
@@ -4672,6 +4674,7 @@ com.facebook.Request -> com.facebook.Request:
     java.lang.String USER_AGENT_HEADER -> USER_AGENT_HEADER
     java.lang.String CONTENT_TYPE_HEADER -> CONTENT_TYPE_HEADER
     java.lang.String ACCEPT_LANGUAGE_HEADER -> ACCEPT_LANGUAGE_HEADER
+    java.lang.String CONTENT_ENCODING_HEADER -> CONTENT_ENCODING_HEADER
     java.lang.String PICTURE_PARAM -> PICTURE_PARAM
     java.lang.String FORMAT_PARAM -> FORMAT_PARAM
     java.lang.String FORMAT_JSON -> FORMAT_JSON
@@ -4788,8 +4791,10 @@ com.facebook.Request -> com.facebook.Request:
     java.lang.String getGraphPathWithVersion() -> getGraphPathWithVersion
     void serializeToBatch(org.json.JSONArray,java.util.Map) -> serializeToBatch
     boolean hasOnProgressCallbacks(com.facebook.RequestBatch) -> hasOnProgressCallbacks
+    void setConnectionContentType(java.net.HttpURLConnection,boolean) -> setConnectionContentType
+    boolean isGzipCompressible(com.facebook.RequestBatch) -> isGzipCompressible
     void serializeToUrlConnection(com.facebook.RequestBatch,java.net.HttpURLConnection) -> serializeToUrlConnection
-    void processRequest(com.facebook.RequestBatch,com.facebook.internal.Logger,int,java.net.URL,java.io.OutputStream) -> processRequest
+    void processRequest(com.facebook.RequestBatch,com.facebook.internal.Logger,int,java.net.URL,java.io.OutputStream,boolean) -> processRequest
     boolean isMeRequest(java.lang.String) -> isMeRequest
     void processGraphObject(com.facebook.model.GraphObject,java.lang.String,com.facebook.Request$KeyValueSerializer) -> processGraphObject
     void processGraphObjectProperty(java.lang.String,java.lang.Object,com.facebook.Request$KeyValueSerializer,boolean) -> processGraphObjectProperty
@@ -4857,6 +4862,7 @@ com.facebook.Request$Serializer -> com.facebook.Request$Serializer:
     java.io.OutputStream outputStream -> outputStream
     com.facebook.internal.Logger logger -> logger
     boolean firstWrite -> firstWrite
+    boolean useUrlEncode -> useUrlEncode
     void writeObject(java.lang.String,java.lang.Object,com.facebook.Request) -> writeObject
     void writeRequestsAsJson(java.lang.String,org.json.JSONArray,java.util.Collection) -> writeRequestsAsJson
     void writeString(java.lang.String,java.lang.String) -> writeString
@@ -5018,7 +5024,6 @@ com.facebook.Session -> com.facebook.Session:
     android.os.Bundle authorizationBundle -> authorizationBundle
     java.util.List callbacks -> callbacks
     android.os.Handler handler -> handler
-    com.facebook.Session$AutoPublishAsyncTask autoPublishAsyncTask -> autoPublishAsyncTask
     java.lang.Object lock -> lock
     com.facebook.TokenCachingStrategy tokenCachingStrategy -> tokenCachingStrategy
     com.facebook.Session$TokenRefreshRequest currentTokenRefreshRequest -> currentTokenRefreshRequest
@@ -5095,20 +5100,18 @@ com.facebook.Session -> com.facebook.Session:
     int hashCode() -> hashCode
     boolean equals(java.lang.Object) -> equals
     boolean areEqual(java.lang.Object,java.lang.Object) -> areEqual
-    void autoPublishAsync() -> autoPublishAsync
     android.content.Context access$2() -> access$2
     com.facebook.Session$TokenRefreshRequest access$3(com.facebook.Session) -> access$3
     void access$4(com.facebook.Session,com.facebook.Session$TokenRefreshRequest) -> access$4
-    void access$5(com.facebook.Session,com.facebook.Session$AutoPublishAsyncTask) -> access$5
-    java.lang.Object access$6(com.facebook.Session) -> access$6
-    com.facebook.AccessToken access$7(com.facebook.Session) -> access$7
-    void access$8(com.facebook.Session,com.facebook.AccessToken) -> access$8
-    com.facebook.SessionState access$9(com.facebook.Session) -> access$9
+    java.lang.Object access$5(com.facebook.Session) -> access$5
+    com.facebook.AccessToken access$6(com.facebook.Session) -> access$6
+    void access$7(com.facebook.Session,com.facebook.AccessToken) -> access$7
+    com.facebook.SessionState access$8(com.facebook.Session) -> access$8
     int[] $SWITCH_TABLE$com$facebook$SessionState() -> $SWITCH_TABLE$com$facebook$SessionState
-    void access$11(com.facebook.Session,int,com.facebook.AuthorizationClient$Result) -> access$11
-    java.util.List access$12(com.facebook.Session) -> access$12
-    android.os.Handler access$13(com.facebook.Session) -> access$13
-    void access$14(android.os.Handler,java.lang.Runnable) -> access$14
+    void access$10(com.facebook.Session,int,com.facebook.AuthorizationClient$Result) -> access$10
+    java.util.List access$11(com.facebook.Session) -> access$11
+    android.os.Handler access$12(com.facebook.Session) -> access$12
+    void access$13(android.os.Handler,java.lang.Runnable) -> access$13
 com.facebook.Session$1 -> com.facebook.Session$1:
 com.facebook.Session$2 -> com.facebook.Session$2:
     com.facebook.Session this$0 -> this$0
@@ -5198,14 +5201,6 @@ com.facebook.Session$AuthorizationRequest$AuthRequestSerializationProxyV1 -> com
     java.lang.String applicationId -> applicationId
     java.lang.String validateSameFbidAsToken -> validateSameFbidAsToken
     java.lang.Object readResolve() -> readResolve
-com.facebook.Session$AutoPublishAsyncTask -> com.facebook.Session$AutoPublishAsyncTask:
-    java.lang.String mApplicationId -> mApplicationId
-    android.content.Context mApplicationContext -> mApplicationContext
-    com.facebook.Session this$0 -> this$0
-    java.lang.Void doInBackground(java.lang.Void[]) -> doInBackground
-    void onPostExecute(java.lang.Void) -> onPostExecute
-    void onPostExecute(java.lang.Object) -> onPostExecute
-    java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
 com.facebook.Session$Builder -> com.facebook.Session$Builder:
     android.content.Context context -> context
     java.lang.String applicationId -> applicationId
@@ -5327,7 +5322,6 @@ com.facebook.Settings -> com.facebook.Settings:
     java.lang.String TAG -> TAG
     java.util.HashSet loggingBehaviors -> loggingBehaviors
     java.util.concurrent.Executor executor -> executor
-    boolean shouldAutoPublishInstall -> shouldAutoPublishInstall
     java.lang.String appVersion -> appVersion
     java.lang.String applicationId -> applicationId
     java.lang.String appClientToken -> appClientToken
@@ -5347,8 +5341,6 @@ com.facebook.Settings -> com.facebook.Settings:
     java.lang.String PUBLISH_ACTIVITY_PATH -> PUBLISH_ACTIVITY_PATH
     java.lang.String MOBILE_INSTALL_EVENT -> MOBILE_INSTALL_EVENT
     java.lang.String ANALYTICS_EVENT -> ANALYTICS_EVENT
-    java.lang.String AUTO_PUBLISH -> AUTO_PUBLISH
-    java.lang.String APP_EVENT_PREFERENCES -> APP_EVENT_PREFERENCES
     java.util.concurrent.BlockingQueue DEFAULT_WORK_QUEUE -> DEFAULT_WORK_QUEUE
     java.util.concurrent.ThreadFactory DEFAULT_THREAD_FACTORY -> DEFAULT_THREAD_FACTORY
     java.lang.String APPLICATION_ID_PROPERTY -> APPLICATION_ID_PROPERTY
@@ -5370,9 +5362,7 @@ com.facebook.Settings -> com.facebook.Settings:
     void setFacebookDomain(java.lang.String) -> setFacebookDomain
     java.util.concurrent.Executor getAsyncTaskExecutor() -> getAsyncTaskExecutor
     void publishInstallAsync(android.content.Context,java.lang.String,com.facebook.Request$Callback) -> publishInstallAsync
-    void setShouldAutoPublishInstall(boolean) -> setShouldAutoPublishInstall
-    boolean getShouldAutoPublishInstall() -> getShouldAutoPublishInstall
-    com.facebook.Response publishInstallAndWaitForResponse(android.content.Context,java.lang.String,boolean) -> publishInstallAndWaitForResponse
+    com.facebook.Response publishInstallAndWaitForResponse(android.content.Context,java.lang.String) -> publishInstallAndWaitForResponse
     java.lang.String getAttributionId(android.content.ContentResolver) -> getAttributionId
     java.lang.String getAppVersion() -> getAppVersion
     void setAppVersion(java.lang.String) -> setAppVersion
@@ -5657,8 +5647,6 @@ com.facebook.android.Facebook -> com.facebook.android.Facebook:
     java.lang.String[] stringArray(java.util.List) -> stringArray
     java.util.List stringList(java.lang.String[]) -> stringList
     java.lang.String getAttributionId(android.content.ContentResolver) -> getAttributionId
-    boolean getShouldAutoPublishInstall() -> getShouldAutoPublishInstall
-    void setShouldAutoPublishInstall(boolean) -> setShouldAutoPublishInstall
     java.lang.String access$0(com.facebook.android.Facebook) -> access$0
     com.facebook.Session access$1(com.facebook.android.Facebook) -> access$1
     long access$2(com.facebook.android.Facebook) -> access$2
@@ -6350,6 +6338,7 @@ com.facebook.internal.LikeActionController -> com.facebook.internal.LikeActionCo
     boolean isObjectLiked() -> isObjectLiked
     void toggleLike(android.app.Activity,android.os.Bundle) -> toggleLike
     void performLikeOrUnlike(android.app.Activity,boolean,android.os.Bundle) -> performLikeOrUnlike
+    void fallbackToDialog(android.app.Activity,android.os.Bundle,boolean) -> fallbackToDialog
     void updateState(boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> updateState
     void presentLikeDialog(android.app.Activity,android.os.Bundle) -> presentLikeDialog
     boolean onActivityResult(int,int,android.content.Intent,java.util.UUID) -> onActivityResult
@@ -6357,7 +6346,7 @@ com.facebook.internal.LikeActionController -> com.facebook.internal.LikeActionCo
     void trackPendingCall(com.facebook.widget.FacebookDialog$PendingCall,android.os.Bundle) -> trackPendingCall
     void stopTrackingPendingCall() -> stopTrackingPendingCall
     void storeObjectIdForPendingController(java.lang.String) -> storeObjectIdForPendingController
-    boolean canUseOGPublish(boolean) -> canUseOGPublish
+    boolean canUseOGPublish() -> canUseOGPublish
     void publishLikeAsync(android.app.Activity,android.os.Bundle) -> publishLikeAsync
     void publishUnlikeAsync(android.app.Activity,android.os.Bundle) -> publishUnlikeAsync
     void refreshStatusAsync() -> refreshStatusAsync
@@ -6394,7 +6383,7 @@ com.facebook.internal.LikeActionController -> com.facebook.internal.LikeActionCo
     void access$25(android.content.Context,com.facebook.internal.LikeActionController,java.lang.String,android.os.Bundle) -> access$25
     java.lang.String access$26(com.facebook.internal.LikeActionController) -> access$26
     void access$27(com.facebook.internal.LikeActionController,boolean) -> access$27
-    void access$28(com.facebook.internal.LikeActionController,android.app.Activity,android.os.Bundle) -> access$28
+    void access$28(com.facebook.internal.LikeActionController,android.app.Activity,android.os.Bundle,boolean) -> access$28
     void access$29(com.facebook.internal.LikeActionController,java.lang.String) -> access$29
     void access$30(com.facebook.internal.LikeActionController,boolean) -> access$30
     void access$31(com.facebook.internal.LikeActionController,android.app.Activity,android.os.Bundle) -> access$31
@@ -6618,6 +6607,7 @@ com.facebook.internal.NativeProtocol -> com.facebook.internal.NativeProtocol:
     int PROTOCOL_VERSION_20141001 -> PROTOCOL_VERSION_20141001
     int PROTOCOL_VERSION_20141028 -> PROTOCOL_VERSION_20141028
     int PROTOCOL_VERSION_20141107 -> PROTOCOL_VERSION_20141107
+    int PROTOCOL_VERSION_20141218 -> PROTOCOL_VERSION_20141218
     java.lang.String EXTRA_PROTOCOL_VERSION -> EXTRA_PROTOCOL_VERSION
     java.lang.String EXTRA_PROTOCOL_ACTION -> EXTRA_PROTOCOL_ACTION
     java.lang.String EXTRA_PROTOCOL_CALL_ID -> EXTRA_PROTOCOL_CALL_ID
@@ -6882,7 +6872,6 @@ com.facebook.internal.Utility -> com.facebook.internal.Utility:
     java.lang.String URL_SCHEME -> URL_SCHEME
     java.lang.String APP_SETTINGS_PREFS_STORE -> APP_SETTINGS_PREFS_STORE
     java.lang.String APP_SETTINGS_PREFS_KEY_FORMAT -> APP_SETTINGS_PREFS_KEY_FORMAT
-    java.lang.String APP_SETTING_SUPPORTS_ATTRIBUTION -> APP_SETTING_SUPPORTS_ATTRIBUTION
     java.lang.String APP_SETTING_SUPPORTS_IMPLICIT_SDK_LOGGING -> APP_SETTING_SUPPORTS_IMPLICIT_SDK_LOGGING
     java.lang.String APP_SETTING_NUX_CONTENT -> APP_SETTING_NUX_CONTENT
     java.lang.String APP_SETTING_NUX_ENABLED -> APP_SETTING_NUX_ENABLED
@@ -6940,7 +6929,6 @@ com.facebook.internal.Utility -> com.facebook.internal.Utility:
     void clearCaches(android.content.Context) -> clearCaches
     void deleteDirectory(java.io.File) -> deleteDirectory
     java.util.List asListNoNulls(java.lang.Object[]) -> asListNoNulls
-    java.lang.String getHashedDeviceAndAppID(android.content.Context,java.lang.String) -> getHashedDeviceAndAppID
     void setAppEventAttributionParameters(com.facebook.model.GraphObject,com.facebook.internal.AttributionIdentifiers,java.lang.String,boolean) -> setAppEventAttributionParameters
     void setAppEventExtendedDeviceInfoParameters(com.facebook.model.GraphObject,android.content.Context) -> setAppEventExtendedDeviceInfoParameters
     java.lang.reflect.Method getMethodQuietly(java.lang.Class,java.lang.String,java.lang.Class[]) -> getMethodQuietly
@@ -6971,12 +6959,10 @@ com.facebook.internal.Utility$DialogFeatureConfig -> com.facebook.internal.Utili
     int[] getVersionSpec() -> getVersionSpec
     com.facebook.internal.Utility$DialogFeatureConfig access$0(org.json.JSONObject) -> access$0
 com.facebook.internal.Utility$FetchedAppSettings -> com.facebook.internal.Utility$FetchedAppSettings:
-    boolean supportsAttribution -> supportsAttribution
     boolean supportsImplicitLogging -> supportsImplicitLogging
     java.lang.String nuxContent -> nuxContent
     boolean nuxEnabled -> nuxEnabled
     java.util.Map dialogConfigMap -> dialogConfigMap
-    boolean supportsAttribution() -> supportsAttribution
     boolean supportsImplicitLogging() -> supportsImplicitLogging
     java.lang.String getNuxContent() -> getNuxContent
     boolean getNuxEnabled() -> getNuxEnabled
@@ -7363,6 +7349,7 @@ com.facebook.widget.FacebookDialog$MessageDialogBuilder -> com.facebook.widget.F
 com.facebook.widget.FacebookDialog$MessageDialogFeature -> com.facebook.widget.FacebookDialog$MessageDialogFeature:
     com.facebook.widget.FacebookDialog$MessageDialogFeature MESSAGE_DIALOG -> MESSAGE_DIALOG
     com.facebook.widget.FacebookDialog$MessageDialogFeature PHOTOS -> PHOTOS
+    com.facebook.widget.FacebookDialog$MessageDialogFeature VIDEO -> VIDEO
     int minVersion -> minVersion
     com.facebook.widget.FacebookDialog$MessageDialogFeature[] ENUM$VALUES -> ENUM$VALUES
     java.lang.String getAction() -> getAction
@@ -7524,12 +7511,20 @@ com.facebook.widget.FacebookDialog$VideoDialogBuilderBase -> com.facebook.widget
     java.lang.String videoAttachmentUrl -> videoAttachmentUrl
     com.facebook.widget.FacebookDialog$VideoDialogBuilderBase setPlace(java.lang.String) -> setPlace
     com.facebook.widget.FacebookDialog$VideoDialogBuilderBase addVideoFile(java.io.File) -> addVideoFile
+    com.facebook.widget.FacebookDialog$VideoDialogBuilderBase setVideoUrl(java.lang.String) -> setVideoUrl
     void validate() -> validate
     android.os.Bundle getMethodArguments() -> getMethodArguments
+com.facebook.widget.FacebookDialog$VideoMessageDialogBuilder -> com.facebook.widget.FacebookDialog$VideoMessageDialogBuilder:
+    java.util.EnumSet getDialogFeatures() -> getDialogFeatures
+    com.facebook.widget.FacebookDialog$VideoMessageDialogBuilder setPlace(java.lang.String) -> setPlace
+    com.facebook.widget.FacebookDialog$VideoDialogBuilderBase setPlace(java.lang.String) -> setPlace
+    com.facebook.widget.FacebookDialog$VideoDialogBuilderBase addVideoFile(java.io.File) -> addVideoFile
+    com.facebook.widget.FacebookDialog$VideoDialogBuilderBase setVideoUrl(java.lang.String) -> setVideoUrl
 com.facebook.widget.FacebookDialog$VideoShareDialogBuilder -> com.facebook.widget.FacebookDialog$VideoShareDialogBuilder:
     java.util.EnumSet getDialogFeatures() -> getDialogFeatures
     com.facebook.widget.FacebookDialog$VideoDialogBuilderBase setPlace(java.lang.String) -> setPlace
     com.facebook.widget.FacebookDialog$VideoDialogBuilderBase addVideoFile(java.io.File) -> addVideoFile
+    com.facebook.widget.FacebookDialog$VideoDialogBuilderBase setVideoUrl(java.lang.String) -> setVideoUrl
 com.facebook.widget.FacebookFragment -> com.facebook.widget.FacebookFragment:
     com.facebook.internal.SessionTracker sessionTracker -> sessionTracker
     void onActivityCreated(android.os.Bundle) -> onActivityCreated
@@ -8628,10 +8623,11 @@ com.gmail.tylercap4.jumpsum.JumpSum -> com.gmail.tylercap4.jumpsum.b:
     void doNewGame() -> g
     void updateAdditionalAchievements(int) -> a
     void showLeaderboard() -> h
+    int getLevelNumber() -> i
     void onCreate(android.os.Bundle) -> onCreate
     void onStart() -> onStart
     boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    void reloadSignIn() -> m
+    void reloadSignIn() -> n
     void onConnected(android.os.Bundle) -> a
     void onConnectionSuspended(int) -> b
     void onConnectionFailed(com.google.android.gms.common.ConnectionResult) -> a
@@ -8640,21 +8636,21 @@ com.gmail.tylercap4.jumpsum.JumpSum -> com.gmail.tylercap4.jumpsum.b:
     void onDestroy() -> onDestroy
     void onPause() -> onPause
     void onResume() -> onResume
-    void initBoardAndWidgets() -> i
-    java.lang.String getGameAsString() -> j
-    boolean checkGameOver() -> k
+    void initBoardAndWidgets() -> j
+    java.lang.String getGameAsString() -> k
+    boolean checkGameOver() -> l
     java.util.LinkedList getEligibleDropTargets(int,int) -> a
-    int getScore() -> l
-    void undoMove() -> n
-    void addToUndoStack() -> o
-    void disableUndo() -> p
-    void enableUndo() -> q
+    int getScore() -> m
+    void undoMove() -> o
+    void addToUndoStack() -> p
+    void disableUndo() -> q
+    void enableUndo() -> r
     void loadGame(java.lang.String) -> a
-    void newGame() -> r
+    void newGame() -> s
     void gameOver(boolean,int) -> a
     void updateAchievements(int) -> c
     void jumpedTile(com.gmail.tylercap4.jumpsum.IndexedButton,com.gmail.tylercap4.jumpsum.IndexedButton) -> a
-    int getHighScore() -> s
+    int getHighScore() -> t
     boolean updateHighScore(int) -> d
     void updateScore(int) -> e
     void setUpButton(com.gmail.tylercap4.jumpsum.IndexedButton,int) -> a
@@ -8664,9 +8660,8 @@ com.gmail.tylercap4.jumpsum.JumpSum -> com.gmail.tylercap4.jumpsum.b:
     boolean access$3(com.gmail.tylercap4.jumpsum.JumpSum,int) -> a
     void access$4(com.gmail.tylercap4.jumpsum.JumpSum,boolean,int) -> a
     void access$5(com.gmail.tylercap4.jumpsum.JumpSum) -> b
-    com.facebook.UiLifecycleHelper access$6(com.gmail.tylercap4.jumpsum.JumpSum) -> c
-    void access$7(com.gmail.tylercap4.jumpsum.JumpSum,boolean) -> b
-    void access$8(com.gmail.tylercap4.jumpsum.JumpSum) -> d
+    void access$6(com.gmail.tylercap4.jumpsum.JumpSum,boolean) -> b
+    void access$7(com.gmail.tylercap4.jumpsum.JumpSum) -> c
 com.gmail.tylercap4.jumpsum.JumpSum$1 -> com.gmail.tylercap4.jumpsum.c:
     com.gmail.tylercap4.jumpsum.JumpSum this$0 -> a
     void onClick(android.view.View) -> onClick
@@ -8707,39 +8702,48 @@ com.gmail.tylercap4.jumpsum.JumpSum$GameOverDialog$1 -> com.gmail.tylercap4.jump
 com.gmail.tylercap4.jumpsum.JumpSum$GameOverDialog$2 -> com.gmail.tylercap4.jumpsum.l:
     com.gmail.tylercap4.jumpsum.JumpSum$GameOverDialog this$1 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.gmail.tylercap4.jumpsum.JumpSum$TileDragListener -> com.gmail.tylercap4.jumpsum.m:
+com.gmail.tylercap4.jumpsum.JumpSum$PostStatusCallback -> com.gmail.tylercap4.jumpsum.m:
+    java.lang.String caption -> b
+    com.gmail.tylercap4.jumpsum.JumpSum this$0 -> a
+    void call(com.facebook.Session,com.facebook.SessionState,java.lang.Exception) -> call
+    com.gmail.tylercap4.jumpsum.JumpSum access$0(com.gmail.tylercap4.jumpsum.JumpSum$PostStatusCallback) -> a
+com.gmail.tylercap4.jumpsum.JumpSum$PostStatusCallback$1 -> com.gmail.tylercap4.jumpsum.n:
+    com.gmail.tylercap4.jumpsum.JumpSum$PostStatusCallback this$1 -> a
+    com.facebook.widget.WebDialog val$feedDialog -> b
+    void onComplete(android.os.Bundle,com.facebook.FacebookException) -> onComplete
+com.gmail.tylercap4.jumpsum.JumpSum$TileDragListener -> com.gmail.tylercap4.jumpsum.o:
     com.gmail.tylercap4.jumpsum.JumpSum this$0 -> a
     boolean onDrag(android.view.View,android.view.DragEvent) -> onDrag
-com.gmail.tylercap4.jumpsum.JumpSum$TileTouchListener -> com.gmail.tylercap4.jumpsum.n:
+com.gmail.tylercap4.jumpsum.JumpSum$TileTouchListener -> com.gmail.tylercap4.jumpsum.p:
     com.gmail.tylercap4.jumpsum.JumpSum this$0 -> a
     boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
-com.gmail.tylercap4.jumpsum.JumpSum$ValueSortable -> com.gmail.tylercap4.jumpsum.o:
+com.gmail.tylercap4.jumpsum.JumpSum$ValueSortable -> com.gmail.tylercap4.jumpsum.q:
     int value -> a
     int sortValue -> b
     int compareTo(com.gmail.tylercap4.jumpsum.JumpSum$ValueSortable) -> a
     int getValue() -> a
     int compareTo(java.lang.Object) -> compareTo
-com.gmail.tylercap4.jumpsum.JumpSum7x5 -> com.gmail.tylercap4.jumpsum.p:
+com.gmail.tylercap4.jumpsum.JumpSum7x5 -> com.gmail.tylercap4.jumpsum.r:
     int getRows() -> a
     int getColumns() -> b
     void setCorrectContentView() -> e
     void initWidgetIds() -> f
-com.gmail.tylercap4.jumpsum.JumpSum7x6 -> com.gmail.tylercap4.jumpsum.q:
+com.gmail.tylercap4.jumpsum.JumpSum7x6 -> com.gmail.tylercap4.jumpsum.s:
     int getRows() -> a
     int getColumns() -> b
     void setCorrectContentView() -> e
     void initWidgetIds() -> f
-com.gmail.tylercap4.jumpsum.JumpSum7x7 -> com.gmail.tylercap4.jumpsum.r:
+com.gmail.tylercap4.jumpsum.JumpSum7x7 -> com.gmail.tylercap4.jumpsum.t:
     int getRows() -> a
     int getColumns() -> b
     void setCorrectContentView() -> e
     void initWidgetIds() -> f
-com.gmail.tylercap4.jumpsum.JumpSum8x6 -> com.gmail.tylercap4.jumpsum.s:
+com.gmail.tylercap4.jumpsum.JumpSum8x6 -> com.gmail.tylercap4.jumpsum.u:
     int getRows() -> a
     int getColumns() -> b
     void setCorrectContentView() -> e
     void initWidgetIds() -> f
-com.gmail.tylercap4.jumpsum.JumpSum8x7 -> com.gmail.tylercap4.jumpsum.t:
+com.gmail.tylercap4.jumpsum.JumpSum8x7 -> com.gmail.tylercap4.jumpsum.v:
     int getRows() -> a
     int getColumns() -> b
     void setCorrectContentView() -> e
@@ -8747,60 +8751,70 @@ com.gmail.tylercap4.jumpsum.JumpSum8x7 -> com.gmail.tylercap4.jumpsum.t:
 com.gmail.tylercap4.jumpsum.JumpSumLevel1 -> com.gmail.tylercap4.jumpsum.JumpSumLevel1:
     java.lang.String getGameValsKey() -> c
     java.lang.String getHighScoreKey() -> d
+    int getLevelNumber() -> i
     void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
     void doNewGame() -> g
 com.gmail.tylercap4.jumpsum.JumpSumLevel10 -> com.gmail.tylercap4.jumpsum.JumpSumLevel10:
     java.lang.String getGameValsKey() -> c
     java.lang.String getHighScoreKey() -> d
+    int getLevelNumber() -> i
     void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
     void doNewGame() -> g
 com.gmail.tylercap4.jumpsum.JumpSumLevel2 -> com.gmail.tylercap4.jumpsum.JumpSumLevel2:
     java.lang.String getGameValsKey() -> c
     java.lang.String getHighScoreKey() -> d
+    int getLevelNumber() -> i
     void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
     void doNewGame() -> g
 com.gmail.tylercap4.jumpsum.JumpSumLevel3 -> com.gmail.tylercap4.jumpsum.JumpSumLevel3:
     java.lang.String getGameValsKey() -> c
     java.lang.String getHighScoreKey() -> d
+    int getLevelNumber() -> i
     void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
     void doNewGame() -> g
 com.gmail.tylercap4.jumpsum.JumpSumLevel4 -> com.gmail.tylercap4.jumpsum.JumpSumLevel4:
     java.lang.String getGameValsKey() -> c
     java.lang.String getHighScoreKey() -> d
+    int getLevelNumber() -> i
     void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
     void doNewGame() -> g
 com.gmail.tylercap4.jumpsum.JumpSumLevel5 -> com.gmail.tylercap4.jumpsum.JumpSumLevel5:
     java.lang.String getGameValsKey() -> c
     java.lang.String getHighScoreKey() -> d
+    int getLevelNumber() -> i
     void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
     void doNewGame() -> g
 com.gmail.tylercap4.jumpsum.JumpSumLevel6 -> com.gmail.tylercap4.jumpsum.JumpSumLevel6:
     java.lang.String getGameValsKey() -> c
     java.lang.String getHighScoreKey() -> d
+    int getLevelNumber() -> i
     void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
     void doNewGame() -> g
 com.gmail.tylercap4.jumpsum.JumpSumLevel7 -> com.gmail.tylercap4.jumpsum.JumpSumLevel7:
     java.lang.String getGameValsKey() -> c
     java.lang.String getHighScoreKey() -> d
+    int getLevelNumber() -> i
     void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
     void doNewGame() -> g
 com.gmail.tylercap4.jumpsum.JumpSumLevel8 -> com.gmail.tylercap4.jumpsum.JumpSumLevel8:
     java.lang.String getGameValsKey() -> c
     java.lang.String getHighScoreKey() -> d
+    int getLevelNumber() -> i
     void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
     void doNewGame() -> g
 com.gmail.tylercap4.jumpsum.JumpSumLevel9 -> com.gmail.tylercap4.jumpsum.JumpSumLevel9:
     java.lang.String getGameValsKey() -> c
     java.lang.String getHighScoreKey() -> d
+    int getLevelNumber() -> i
     void showLeaderboard() -> h
     void updateAdditionalAchievements(int) -> a
     void doNewGame() -> g
@@ -8820,43 +8834,43 @@ com.gmail.tylercap4.jumpsum.MainMenu -> com.gmail.tylercap4.jumpsum.MainMenu:
     void onResume() -> onResume
     void access$0(com.gmail.tylercap4.jumpsum.MainMenu,boolean) -> a
     void access$1(com.gmail.tylercap4.jumpsum.MainMenu) -> a
-com.gmail.tylercap4.jumpsum.MainMenu$1 -> com.gmail.tylercap4.jumpsum.u:
+com.gmail.tylercap4.jumpsum.MainMenu$1 -> com.gmail.tylercap4.jumpsum.w:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$10 -> com.gmail.tylercap4.jumpsum.v:
+com.gmail.tylercap4.jumpsum.MainMenu$10 -> com.gmail.tylercap4.jumpsum.x:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$11 -> com.gmail.tylercap4.jumpsum.w:
+com.gmail.tylercap4.jumpsum.MainMenu$11 -> com.gmail.tylercap4.jumpsum.y:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$12 -> com.gmail.tylercap4.jumpsum.x:
+com.gmail.tylercap4.jumpsum.MainMenu$12 -> com.gmail.tylercap4.jumpsum.z:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$13 -> com.gmail.tylercap4.jumpsum.y:
+com.gmail.tylercap4.jumpsum.MainMenu$13 -> com.gmail.tylercap4.jumpsum.aa:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$2 -> com.gmail.tylercap4.jumpsum.z:
+com.gmail.tylercap4.jumpsum.MainMenu$2 -> com.gmail.tylercap4.jumpsum.ab:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$3 -> com.gmail.tylercap4.jumpsum.aa:
+com.gmail.tylercap4.jumpsum.MainMenu$3 -> com.gmail.tylercap4.jumpsum.ac:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$4 -> com.gmail.tylercap4.jumpsum.ab:
+com.gmail.tylercap4.jumpsum.MainMenu$4 -> com.gmail.tylercap4.jumpsum.ad:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$5 -> com.gmail.tylercap4.jumpsum.ac:
+com.gmail.tylercap4.jumpsum.MainMenu$5 -> com.gmail.tylercap4.jumpsum.ae:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$6 -> com.gmail.tylercap4.jumpsum.ad:
+com.gmail.tylercap4.jumpsum.MainMenu$6 -> com.gmail.tylercap4.jumpsum.af:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$7 -> com.gmail.tylercap4.jumpsum.ae:
+com.gmail.tylercap4.jumpsum.MainMenu$7 -> com.gmail.tylercap4.jumpsum.ag:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$8 -> com.gmail.tylercap4.jumpsum.af:
+com.gmail.tylercap4.jumpsum.MainMenu$8 -> com.gmail.tylercap4.jumpsum.ah:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
-com.gmail.tylercap4.jumpsum.MainMenu$9 -> com.gmail.tylercap4.jumpsum.ag:
+com.gmail.tylercap4.jumpsum.MainMenu$9 -> com.gmail.tylercap4.jumpsum.ai:
     com.gmail.tylercap4.jumpsum.MainMenu this$0 -> a
     void onClick(android.view.View) -> onClick
 com.gmail.tylercap4.jumpsum.basegameutils.BaseGameUtils -> com.gmail.tylercap4.jumpsum.a.a:
