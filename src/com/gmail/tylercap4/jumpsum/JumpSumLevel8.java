@@ -16,6 +16,8 @@ public class JumpSumLevel8 extends JumpSum8x6
 	protected String getGameValsKey(){ return GAME_VALUES_KEY; }	
 	@Override
 	protected String getHighScoreKey(){ return HIGH_SCORE_KEY; }
+	@Override
+	protected int getLevelNumber(){ return 8; }
     
 	@Override
     protected void showLeaderboard(){

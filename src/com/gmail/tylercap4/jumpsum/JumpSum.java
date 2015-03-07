@@ -4,8 +4,13 @@ import java.util.LinkedList;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
+import com.facebook.FacebookException;
+import com.facebook.Session;
+import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.widget.FacebookDialog;
+import com.facebook.widget.WebDialog;
+import com.facebook.widget.WebDialog.OnCompleteListener;
 import com.gmail.tylercap4.jumpsum.basegameutils.BaseGameUtils;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -67,6 +72,7 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
     protected abstract void 						doNewGame();
     protected abstract void							updateAdditionalAchievements( int score );
     protected abstract void							showLeaderboard();
+    protected abstract int							getLevelNumber();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -760,7 +766,6 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
     
     private class CheckGameOverTask extends AsyncTask<Integer, Integer, Integer> 
     {	
-
     	@Override
     	protected Integer doInBackground(Integer... params) {
         	boolean over = checkGameOver();
@@ -780,7 +785,6 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
     			gameOver( new_high, score );
     		}
     	}
-
     }
     
     private class GameOverDialog extends DialogFragment 
@@ -830,38 +834,75 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
         
         private void postScoreToFacebook(){    		
         	// post to Facebook
-        	if (FacebookDialog.canPresentShareDialog(getApplicationContext(), 
-                    FacebookDialog.ShareDialogFeature.SHARE_DIALOG)) 
-        	{			    
-        		String message = "I Scored " + score + " in Jump Sum";
-        		
-			    FacebookDialog.ShareDialogBuilder builder = new FacebookDialog.ShareDialogBuilder(JumpSum.this)
-			            .setLink("http://play.google.com/store/apps/details?id=com.gmail.tylercap4.jumpsum")
-			            .setCaption(message)			            
-			            .setDescription(message);
-
-		        if (builder.canPresent()) {
-		        	uiHelper.trackPendingDialogCall(builder.build().present());
-		        }
-        	}
-        	else
-        	{
-//        		Bundle params = new Bundle();
-//        	    params.putString("caption", message);
-//        	    params.putString("description", message);
-//        	    params.putString("link", "http://play.google.com/store/apps/details?id=com.gmail.tylercap4.jumpsum");
+    		String message = "I Scored " + score + " on Jump Sum Level " + JumpSum.this.getLevelNumber();
+    		
+//        	if (FacebookDialog.canPresentShareDialog(getApplicationContext(), 
+//                    FacebookDialog.ShareDialogFeature.SHARE_DIALOG)) 
+//        	{        		
+//			    FacebookDialog.ShareDialogBuilder builder = new FacebookDialog.ShareDialogBuilder(JumpSum.this)
+//			            .setLink("http://play.google.com/store/apps/details?id=com.gmail.tylercap4.jumpsum")
+//			            .setCaption(message);
 //
-//        	    WebDialog feedDialog = (
-//        	            new WebDialog.FeedDialogBuilder(getActivity(),
-//        	                    Session.getActiveSession(),
-//        	                    params)).build();
-//        	    feedDialog.show();
-        	    
-        		StringBuilder message = new StringBuilder("Unable to post to Facebook.");
-        		message.append("\nFacebook App not installed, or");
-        		message.append("\nsharing is not supported.");
-        		Toast.makeText(JumpSum.this, message.toString(), Toast.LENGTH_LONG).show();
-        	}
+//		        if (builder.canPresent()) {
+//		        	uiHelper.trackPendingDialogCall(builder.build().present());
+//		        }
+//        	}
+//        	else
+//        	{
+    	       Session session = Session.getActiveSession();
+    	       Session.StatusCallback sbc = new PostStatusCallback(message);
+    	       if (!session.isOpened() && !session.isClosed()) {
+    	           session.openForRead(new Session.OpenRequest(JumpSum.this).setCallback(sbc));
+    	       } else {
+    	           Session.openActiveSession(JumpSum.this, true, sbc);
+    	       }
+//        	}
         }
+    }
+    
+    private class PostStatusCallback implements Session.StatusCallback
+    {
+    	private final String caption;
+    	
+    	public PostStatusCallback(String message){
+    		this.caption = message;
+    	}
+
+		@Override
+		public void call(Session session, SessionState state, Exception exception) 
+		{    		
+			if( exception == null && session != null && session.isOpened() ){
+	    		Bundle params = new Bundle();
+	    	    //params.putString("caption", message);
+	    	    params.putString("description", caption);
+	    	    params.putString("link", "http://play.google.com/store/apps/details?id=com.gmail.tylercap4.jumpsum");
+	
+	    	    final WebDialog feedDialog = (
+	    	            new WebDialog.FeedDialogBuilder(JumpSum.this,
+	    	                    session,
+	    	                    params))
+	    	                    .build();
+	    	    
+	    	    feedDialog.setOnCompleteListener(new OnCompleteListener(){
+
+					@Override
+					public void onComplete(Bundle values,
+							FacebookException error) 
+					{
+						feedDialog.dismiss();
+						JumpSum.this.newGame();
+					}
+                	
+                });
+	    	    
+	    	    feedDialog.show();
+			}
+//			else{        	    
+//        		StringBuilder message = new StringBuilder("Unable to post to Facebook.");
+//        		message.append("\nFacebook App not installed, or");
+//        		message.append("\nsharing is not supported.");
+//        		Toast.makeText(JumpSum.this, message.toString(), Toast.LENGTH_LONG).show();
+//			}
+		}    	
     }
 }
