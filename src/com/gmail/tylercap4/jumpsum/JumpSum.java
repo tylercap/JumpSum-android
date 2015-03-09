@@ -824,12 +824,18 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
         }
         
         private String getGameOverMessage(){
+        	StringBuilder message = new StringBuilder("Game Over\nScore: ");
+        	message.append(score);
         	if( new_high ){
-        		return "Game Over\nScore: " + score + "\nNew High Score!";
+        		message.append("\nNew High Score!");
         	}
-        	else{
-        		return "Game Over\nScore: " + score;
+        	
+        	if( !JumpSum.this.mGoogleApiClient.isConnected() ){
+        		message.append("\n\nYou must be signed in for your scores to be submitted to the Leaderboard.");
+        		message.append("\nClick the sign in button in the top right corner, and sign in with your Google account.");
         	}
+        	
+        	return message.toString();
         }
         
         private void postScoreToFacebook(){    		
