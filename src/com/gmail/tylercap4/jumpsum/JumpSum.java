@@ -846,7 +846,7 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
 //                    FacebookDialog.ShareDialogFeature.SHARE_DIALOG)) 
 //        	{        		
 //			    FacebookDialog.ShareDialogBuilder builder = new FacebookDialog.ShareDialogBuilder(JumpSum.this)
-//			            .setLink("http://play.google.com/store/apps/details?id=com.gmail.tylercap4.jumpsum")
+//			            .setLink("http://play.google.com/store/apps/details?id=com.gmail.tylercap4.jumpsumfree")
 //			            .setCaption(message);
 //
 //		        if (builder.canPresent()) {
@@ -881,7 +881,7 @@ public abstract class JumpSum extends Activity implements ConnectionCallbacks, O
 	    		Bundle params = new Bundle();
 	    	    //params.putString("caption", message);
 	    	    params.putString("description", caption);
-	    	    params.putString("link", "http://play.google.com/store/apps/details?id=com.gmail.tylercap4.jumpsum");
+	    	    params.putString("link", "http://play.google.com/store/apps/details?id=com.gmail.tylercap4.jumpsumfree");
 	
 	    	    final WebDialog feedDialog = (
 	    	            new WebDialog.FeedDialogBuilder(JumpSum.this,
