@@ -12,6 +12,7 @@
     <string name="level8">Jump Sum Level 8</string>
     <string name="level9">Jump Sum Level 9</string>
     <string name="level10">Jump Sum Level 10</string>
+    <string name="level11">Jump Sum Level 11</string>
     
     <string name="facebook_app_id">506870486121740</string>
     <string name="games_app_id">320198239668</string>
@@ -25,6 +26,7 @@
     <string name="leaderboard_l8_id">CgkItMu16qgJEAIQLg</string>
     <string name="leaderboard_l9_id">CgkItMu16qgJEAIQLw</string>
     <string name="leaderboard_l10_id">CgkItMu16qgJEAIQMA</string>
+    <string name="leaderboard_l11_id">CgkItMu16qgJEAIQRA</string>
     
     <string name="achievement_90plus5_id">CgkItMu16qgJEAIQCQ</string>
     <string name="achievement_90plus20_id">CgkItMu16qgJEAIQBQ</string>
@@ -52,6 +54,7 @@
     <string name="level8_button">Level 8</string>
     <string name="level9_button">Level 9</string>
     <string name="level10_button">Level 10</string>
+    <string name="level11_button">Level 11</string>
     <string name="leaderboard">Leaderboard</string>
     <string name="how_to_page">How To</string>
     <string name="current_score">Current Score: </string>
@@ -124,4 +127,9 @@
     <string name="achievement_80plus_l10_id">CgkItMu16qgJEAIQOA</string>
     <string name="achievement_90plus_l10_id">CgkItMu16qgJEAIQOQ</string>
     <string name="achievement_perfect_l10_id">CgkItMu16qgJEAIQPA</string>
+    
+    <string name="achievement_60plus_l11_id">CgkItMu16qgJEAIQQA</string>
+    <string name="achievement_80plus_l11_id">CgkItMu16qgJEAIQQQ</string>
+    <string name="achievement_90plus_l11_id">CgkItMu16qgJEAIQQg</string>
+    <string name="achievement_perfect_l11_id">CgkItMu16qgJEAIQQw</string>
 </resources>

@@ -97,6 +97,13 @@
 	            android:value="com.gmail.tylercap4.jumpsum.MainMenu" />
         </activity>
         <activity
+            android:name=".JumpSumLevel11"
+            android:label="@string/level11" >
+	        <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+	            android:value="com.gmail.tylercap4.jumpsum.MainMenu" />
+        </activity>
+        <activity
             android:name=".HowToPage"
             android:label="@string/how_to_page" >
 	        <meta-data
