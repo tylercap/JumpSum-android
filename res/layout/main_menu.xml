@@ -129,6 +129,12 @@
 		   		style="@style/CustomButton" 
 		        android:layout_width="match_parent"
 		    	android:layout_margin="5dp"/>
+		    <Button
+		        android:id="@+id/level11_button"
+		        android:text="@string/level11_button"
+		   		style="@style/CustomButton" 
+		        android:layout_width="match_parent"
+		    	android:layout_margin="5dp"/>
 		</LinearLayout>
 	</ScrollView>
 </LinearLayout>
